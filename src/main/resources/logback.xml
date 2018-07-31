@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-4level [%logger.%method:%line]- %msg%n</pattern>
+        </layout>
+    </appender>
+
+    <appender name="LOGFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/home/mydir/logs/my-web.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>my-web.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-4level [%logger.%method:%line] - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 	RULES for logging DEBUG < INFO < WARN < ERROR < FATAL.-->
+    <logger name="riverway" additivity="false">
+        <level value="DEBUG"/>
+        <appender-ref ref="LOGFILE"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <root>
+        <level value="INFO" />
+        <appender-ref ref="CONSOLE" />
+    </root>
+
+</configuration>
