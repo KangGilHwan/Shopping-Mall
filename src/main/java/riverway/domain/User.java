@@ -2,6 +2,7 @@ package riverway.domain;
 
 import riverway.dto.UserDto;
 
+import javax.jws.soap.SOAPBinding;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +11,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 public class User {
+    public static final GuestUser GUEST_USER = new GuestUser();
 
     @Id
     @GeneratedValue
@@ -48,5 +50,25 @@ public class User {
 
     public Long getId() {
         return id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public boolean isGuestUser(){
+        return false;
+    }
+
+    private static class GuestUser extends User{
+
+        @Override
+        public boolean isGuestUser(){
+            return true;
+        }
     }
 }

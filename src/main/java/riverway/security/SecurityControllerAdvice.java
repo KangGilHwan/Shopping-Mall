@@ -18,7 +18,7 @@ public class SecurityControllerAdvice {
     @ExceptionHandler(EntityNotFoundException.class)
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
     public String emptyResultData(){
-        log.debug("EntityNotFoundException : ");
-        return "데이터를 찾을 수 없습니다";
+        log.debug("EntityNotFoundException");
+        return "데이터를 찾을 수 없습니다/";
     }
 }

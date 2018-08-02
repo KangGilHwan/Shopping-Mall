@@ -13,7 +13,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String goHome(){
-        return "/loginForm.html";
+        return "/index.html";
     }
 
     @GetMapping("/loginForm")

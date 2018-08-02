@@ -36,7 +36,28 @@ public class ApiUserAcceptanceTest extends AcceptanceTest {
     }
 
     @Test
-    public void show(){
+    public void findUser_no_user(){
+        ResponseEntity<String> response = template.getForEntity("/api/users/200", String.class);
+        log.debug("Saved User : {}", response.getBody());
+        assertThat(response.getBody() ,is("데이터를 찾을 수 없습니다."));
+    }
+
+    @Test
+    public void update_no_login(){
+        UserDto signUpUser = UserDto.build()
+                .setUsername("riverway2")
+                .setEmail("test2@naver.com")
+                .setPassword("1234567")
+                .setPhoneNumber("01012345679");
+
+        ResponseEntity<String> response = template.postForEntity("/api/users", signUpUser, String.class);
+        assertThat(response.getStatusCode(), is(HttpStatus.CREATED));
+
+        String location = response.getHeaders().getLocation().getPath();
+
+        UserDto user = template.getForObject(location, UserDto.class);
+        log.debug("Saved User : {}", user);
+        assertThat(signUpUser, is(user));
 
     }
 }

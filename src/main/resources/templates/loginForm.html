@@ -5,24 +5,26 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<nav class="navbar navbar-light bg-light justify-content-between">
-		<a class="navbar-brand">RiverShop</a>
-		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-			<div class="navbar-nav">
-				<a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-				<a class="nav-item nav-link" href="#">Items</a>
-				<a class="nav-item nav-link" href="/loginForm">Login</a>
-				<a class="nav-item nav-link disabled" href="#">Disabled</a>
+	<div class="row">
+		<nav class="navbar navbar-light bg-light justify-content-between">
+			<a class="navbar-brand">RiverShop</a>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+					<a class="nav-item nav-link" href="#">Items</a>
+					<a class="nav-item nav-link" href="/loginForm">Login</a>
+					<a class="nav-item nav-link disabled" href="#">Disabled</a>
+				</div>
+				<div>
+					<form class="form-inline">
+						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					</form>
+				</div>
 			</div>
-			<div>
-		<form class="form-inline">
-			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-		</form>
-			</div>
-		</div>
+		</nav>
+	</div>
 
-	</nav>
 
 	<!-- 부트스트랩 -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -31,7 +33,7 @@
 
 <body>
 <h1>로그인</h1>
-<form action="/login" method="post">
+<form action="/api/users" method="post" >
 	<input type="text" name="username" placeholder="이름을 입력해주세요.">
 	<input type= "password" name="password" placeholder="패스워드를 입력해주세요.">
 	<input type="email" name="email" placeholder="이메일을 입력해주세요.">
@@ -41,6 +43,8 @@
 		<button type="submit">Submit</button>
 	</div>
 </form>
+
+<a href="https://kauth.kakao.com/oauth/authorize?client_id=836c89b8e516affc7eed3300b54bb438&redirect_uri=http://localhost:8060/api/kakao/oauth&response_type=code">카카오 로그인 </a>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

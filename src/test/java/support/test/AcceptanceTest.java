@@ -8,6 +8,8 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
+import riverway.domain.User;
+import riverway.domain.repository.UserRepository;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -20,29 +22,29 @@ public abstract class AcceptanceTest {
     @Autowired
     protected TestRestTemplate template;
     
-//    @Autowired
-//    private UserRepository userRepository;
+    @Autowired
+    private UserRepository userRepository;
     
     public TestRestTemplate template() {
         return template;
     } 
     
-//    public TestRestTemplate basicAuthTemplate() {
-//        return basicAuthTemplate(findDefaultUser());
-//    }
+    public TestRestTemplate basicAuthTemplate() {
+        return basicAuthTemplate(findDefaultUser());
+    }
     
-//    public TestRestTemplate basicAuthTemplate(User loginUser) {
-//        return template.withBasicAuth(loginUser.getUserId(), loginUser.getPassword());
-//    }
-//
-//    protected User findDefaultUser() {
-//        return findByUserId(DEFAULT_LOGIN_USER);
-//    }
-//
-//    protected User findByUserId(String userId) {
-//        return userRepository.findByUserId(userId).get();
-//    }
-//
+    public TestRestTemplate basicAuthTemplate(User loginUser) {
+        return template.withBasicAuth(loginUser.getUsername(), loginUser.getPassword());
+    }
+
+    protected User findDefaultUser() {
+        return findByUserId(DEFAULT_LOGIN_USER);
+    }
+
+    protected User findByUserId(String userId) {
+        return userRepository.findByUsername(userId).get();
+    }
+
     protected String createResource(String path, Object bodyPayload) {
         ResponseEntity<String> response = template().postForEntity(path, bodyPayload, String.class);
         assertThat(response.getStatusCode(), is(HttpStatus.CREATED));
