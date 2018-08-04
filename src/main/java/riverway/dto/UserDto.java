@@ -1,5 +1,6 @@
 package riverway.dto;
 
+import riverway.domain.SocialCode;
 import riverway.domain.User;
 
 import java.util.Objects;
@@ -11,6 +12,8 @@ public class UserDto {
     private String password;
     private String email;
     private String phoneNumber;
+    private Long socialId;
+    private SocialCode socialCode;
 
     public UserDto() {
     }
@@ -23,7 +26,7 @@ public class UserDto {
     }
 
     public User toUser(){
-        return new User(username, password, email, phoneNumber);
+        return new User(username, password, email, phoneNumber, socialId, socialCode);
     }
 
     public static UserDto build(){
@@ -63,6 +66,24 @@ public class UserDto {
 
     public UserDto setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+        return this;
+    }
+
+    public Long getSocialId() {
+        return socialId;
+    }
+
+    public UserDto setSocialId(Long socialId) {
+        this.socialId = socialId;
+        return this;
+    }
+
+    public SocialCode getSocialCode() {
+        return socialCode;
+    }
+
+    public UserDto setSocialCode(SocialCode socialCode) {
+        this.socialCode = socialCode;
         return this;
     }
 

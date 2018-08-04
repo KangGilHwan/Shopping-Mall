@@ -11,6 +11,7 @@ import riverway.domain.User;
 import riverway.dto.UserDto;
 import riverway.service.UserService;
 
+import javax.servlet.http.HttpSession;
 import java.net.URI;
 
 @RestController
@@ -22,9 +23,11 @@ public class ApiUserController {
     private UserService userService;
 
     @PostMapping("")
-    public ResponseEntity<Void> create(@RequestBody UserDto signUpUser){
+    public ResponseEntity<Void> create(@RequestBody UserDto signUpUser, HttpSession session){
         log.debug("register : {}", signUpUser);
         User savedUser = userService.register(signUpUser);
+        session.setAttribute(HttpSessionUtils.USER_SESSION_KEY, savedUser);
+        log.debug("Login : {}", savedUser);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(URI.create("/api/users/" + savedUser.getId()));

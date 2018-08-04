@@ -3,10 +3,7 @@ package riverway.domain;
 import riverway.dto.UserDto;
 
 import javax.jws.soap.SOAPBinding;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -30,14 +27,21 @@ public class User {
     @Column(length = 20)
     private String phoneNumber;
 
+    private Long socialId;
+
+    @Enumerated(EnumType.STRING)
+    private SocialCode socialCode;
+
     public User() {
     }
 
-    public User(String username, String password, String email, String phoneNumber) {
+    public User(String username, String password, String email, String phoneNumber, Long socialId, SocialCode socialCode) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.socialId = socialId;
+        this.socialCode = socialCode;
     }
 
     public UserDto toUserDto(){
@@ -70,5 +74,18 @@ public class User {
         public boolean isGuestUser(){
             return true;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", socialId=" + socialId +
+                ", socialCode=" + socialCode +
+                '}';
     }
 }
