@@ -7,11 +7,13 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import riverway.Exception.UnAuthenticationException;
 import riverway.domain.User;
 import riverway.dto.UserDto;
 import riverway.service.UserService;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
@@ -23,10 +25,9 @@ public class ApiUserController {
     private UserService userService;
 
     @PostMapping("")
-    public ResponseEntity<Void> create(@RequestBody UserDto signUpUser, HttpSession session){
+    public ResponseEntity<Void> create(@Valid @RequestBody UserDto signUpUser) {
         log.debug("register : {}", signUpUser);
         User savedUser = userService.register(signUpUser);
-        session.setAttribute(HttpSessionUtils.USER_SESSION_KEY, savedUser);
         log.debug("Login : {}", savedUser);
 
         HttpHeaders headers = new HttpHeaders();
@@ -35,7 +36,19 @@ public class ApiUserController {
     }
 
     @GetMapping("/{id}")
-    public UserDto show(@PathVariable Long id){
+    public UserDto show(@PathVariable Long id) {
         return userService.findUser(id).toUserDto();
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<Void> login(String username, String password, HttpSession session) {
+        try {
+            log.debug("username : {} , password : {}", username, password);
+            session.setAttribute(HttpSessionUtils.USER_SESSION_KEY, userService.login(username, password));
+        }catch (UnAuthenticationException e){
+            log.debug("로그인 실패 : {}", e.getMessage());
+            return new ResponseEntity<Void>(HttpStatus.UNAUTHORIZED);
+        }
+        return new ResponseEntity<Void>(HttpStatus.OK);
     }
 }

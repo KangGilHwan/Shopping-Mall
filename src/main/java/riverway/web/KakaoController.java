@@ -16,6 +16,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
+import riverway.domain.SocialCode;
 import riverway.domain.User;
 import riverway.dto.KakaoDto;
 import riverway.service.UserService;
@@ -47,10 +48,11 @@ public class KakaoController {
         if (!maybeUser.isPresent()){
             model.addAttribute("socialId", userInfo.get("id").asText());
             model.addAttribute("username", userInfo.get("properties").get("nickname").asText());
-            model.addAttribute("socialCode", userInfo.get("properties").get("profile_image").asText());
+            model.addAttribute("profileImage", userInfo.get("properties").get("profile_image").asText());
+            model.addAttribute("socialCode", SocialCode.KAKAO);
             log.debug("nickname : {}", userInfo.get("properties").get("nickname").asText());
 //            model.addAttribute("")
-            return "/userForm";
+            return "/user/form";
         }
         session.setAttribute(HttpSessionUtils.USER_SESSION_KEY, maybeUser.get());
         return "redirect:/";

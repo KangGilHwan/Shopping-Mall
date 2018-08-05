@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import riverway.Exception.UnAuthenticationException;
 
 import javax.persistence.EntityNotFoundException;
 
@@ -19,6 +20,12 @@ public class SecurityControllerAdvice {
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
     public String emptyResultData(){
         log.debug("EntityNotFoundException");
-        return "데이터를 찾을 수 없습니다/";
+        return "데이터를 찾을 수 없습니다.";
+    }
+
+    @ExceptionHandler(UnAuthenticationException.class)
+    @ResponseStatus(value = HttpStatus.UNAUTHORIZED)
+    public void unAuthentication() {
+        log.debug("UnAuthenticationException");
     }
 }

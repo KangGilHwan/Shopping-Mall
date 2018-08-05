@@ -13,11 +13,16 @@ public class HomeController {
 
     @GetMapping("/")
     public String goHome(){
-        return "/index.html";
+        return "/index";
     }
 
     @GetMapping("/login")
     public String loginForm(){
-        return "/login";
+        return "/user/login";
+    }
+
+    @GetMapping("/users/form")
+    public String create(){
+        return "/user/form";
     }
 }

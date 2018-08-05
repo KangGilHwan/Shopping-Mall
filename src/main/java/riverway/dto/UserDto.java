@@ -3,17 +3,20 @@ package riverway.dto;
 import riverway.domain.SocialCode;
 import riverway.domain.User;
 
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 public class UserDto {
 
     private Long id;
+    @Size(min = 2, max = 10)
     private String username;
+    @Size(min = 6)
     private String password;
     private String email;
     private String phoneNumber;
     private Long socialId;
-    private SocialCode socialCode;
+    private String socialCode;
 
     public UserDto() {
     }
@@ -26,7 +29,7 @@ public class UserDto {
     }
 
     public User toUser(){
-        return new User(username, password, email, phoneNumber, socialId, socialCode);
+        return new User(username, password, email, phoneNumber, socialId, getSocialCode());
     }
 
     public static UserDto build(){
@@ -79,10 +82,13 @@ public class UserDto {
     }
 
     public SocialCode getSocialCode() {
-        return socialCode;
+        if (socialCode == null || socialCode.equals("")){
+            return null;
+        }
+        return SocialCode.valueOf(socialCode);
     }
 
-    public UserDto setSocialCode(SocialCode socialCode) {
+    public UserDto setSocialCode(String socialCode) {
         this.socialCode = socialCode;
         return this;
     }

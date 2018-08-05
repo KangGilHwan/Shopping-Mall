@@ -4,6 +4,8 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.*;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import riverway.dto.UserDto;
 import support.test.AcceptanceTest;
 
@@ -19,20 +21,23 @@ public class ApiUserAcceptanceTest extends AcceptanceTest {
 
     @Test
     public void create() {
-        UserDto signUpUser = UserDto.build()
-                .setUsername("riverway")
-                .setEmail("test@naver.com")
-                .setPassword("123456")
-                .setPhoneNumber("01012345678");
-
+        UserDto signUpUser = creatUser("riverway");
         ResponseEntity<String> response = template.postForEntity("/api/users", signUpUser, String.class);
         assertThat(response.getStatusCode(), is(HttpStatus.CREATED));
 
         String location = response.getHeaders().getLocation().getPath();
-
         UserDto user = template.getForObject(location, UserDto.class);
         log.debug("Saved User : {}", user);
         assertThat(signUpUser, is(user));
+    }
+
+    public UserDto creatUser(String username){
+        UserDto signUpUser = UserDto.build()
+                .setUsername(username)
+                .setEmail("test@naver.com")
+                .setPassword("123456")
+                .setPhoneNumber("01012345678");
+        return signUpUser;
     }
 
     @Test
@@ -43,21 +48,54 @@ public class ApiUserAcceptanceTest extends AcceptanceTest {
     }
 
     @Test
-    public void update_no_login(){
-        UserDto signUpUser = UserDto.build()
-                .setUsername("riverway2")
-                .setEmail("test2@naver.com")
-                .setPassword("1234567")
-                .setPhoneNumber("01012345679");
-
+    public void login_success(){
+        UserDto signUpUser = creatUser("riverway3");
         ResponseEntity<String> response = template.postForEntity("/api/users", signUpUser, String.class);
         assertThat(response.getStatusCode(), is(HttpStatus.CREATED));
 
-        String location = response.getHeaders().getLocation().getPath();
-
-        UserDto user = template.getForObject(location, UserDto.class);
-        log.debug("Saved User : {}", user);
-        assertThat(signUpUser, is(user));
-
+        HttpEntity<MultiValueMap<String, Object>> request = login("riverway3", "123456");
+        response = template.postForEntity("/api/users/login", request, String.class);
+        assertThat(response.getStatusCode(), is(HttpStatus.OK));
+        log.debug("response : {}", response);
     }
+
+    @Test
+    public void login_다른_비밀번호(){
+        UserDto signUpUser = creatUser("riverway4");
+        ResponseEntity<String> response = template.postForEntity("/api/users", signUpUser, String.class);
+        assertThat(response.getStatusCode(), is(HttpStatus.CREATED));
+
+        HttpEntity<MultiValueMap<String, Object>> request = login("riverway4", "1234567");
+        response = template.postForEntity("/api/users/login", request, String.class);
+        assertThat(response.getStatusCode(), is(HttpStatus.UNAUTHORIZED));
+        log.debug("response : {}", response);
+    }
+
+    public HttpEntity<MultiValueMap<String, Object>> login(String username ,String password){
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+
+        MultiValueMap<String, Object> params = new LinkedMultiValueMap<>();
+        params.add("username", username);
+        params.add("password", password);
+        return new HttpEntity<>(params, headers);
+    }
+
+//    @Test
+//    public void update_no_login(){
+//        UserDto signUpUser = UserDto.build()
+//                .setUsername("riverway2")
+//                .setEmail("test2@naver.com")
+//                .setPassword("1234567")
+//                .setPhoneNumber("01012345679");
+//
+//        ResponseEntity<String> response = template.postForEntity("/api/users", signUpUser, String.class);
+//        assertThat(response.getStatusCode(), is(HttpStatus.CREATED));
+//
+//        String location = response.getHeaders().getLocation().getPath();
+//
+//        UserDto user = template.getForObject(location, UserDto.class);
+//        log.debug("Saved User : {}", user);
+//        assertThat(signUpUser, is(user));
+//    }
 }

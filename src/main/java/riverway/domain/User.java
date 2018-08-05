@@ -18,7 +18,7 @@ public class User {
     @Column(nullable = false)
     private String username;
 
-    @Size(min = 6, max = 20)
+    @Size(min = 6)
     @Column(nullable = false)
     private String password;
 
@@ -29,6 +29,7 @@ public class User {
 
     private Long socialId;
 
+    @Column
     @Enumerated(EnumType.STRING)
     private SocialCode socialCode;
 
@@ -66,6 +67,10 @@ public class User {
 
     public boolean isGuestUser(){
         return false;
+    }
+
+    public boolean matchPassword(String password) {
+        return this.password.equals(password);
     }
 
     private static class GuestUser extends User{
