@@ -11,7 +11,7 @@ public class User {
     public static final GuestUser GUEST_USER = new GuestUser();
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Size(min = 2, max = 10)

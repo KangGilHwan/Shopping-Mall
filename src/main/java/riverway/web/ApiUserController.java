@@ -41,14 +41,10 @@ public class ApiUserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<Void> login(String username, String password, HttpSession session) {
-        try {
-            log.debug("username : {} , password : {}", username, password);
-            session.setAttribute(HttpSessionUtils.USER_SESSION_KEY, userService.login(username, password));
-        }catch (UnAuthenticationException e){
-            log.debug("로그인 실패 : {}", e.getMessage());
-            return new ResponseEntity<Void>(HttpStatus.UNAUTHORIZED);
-        }
+    public ResponseEntity<Void> login(String username, String password, HttpSession session) throws UnAuthenticationException {
+        log.debug("username : {} , password : {}", username, password);
+        session.setAttribute(HttpSessionUtils.USER_SESSION_KEY, userService.login(username, password));
+//        log.debug("로그인 실패 : {}", e.getMessage());
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
 }

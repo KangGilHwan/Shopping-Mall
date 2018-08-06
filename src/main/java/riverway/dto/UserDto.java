@@ -99,21 +99,19 @@ public class UserDto {
         if (o == null || getClass() != o.getClass()) return false;
         UserDto userDto = (UserDto) o;
         return Objects.equals(username, userDto.username) &&
-                Objects.equals(password, userDto.password) &&
                 Objects.equals(email, userDto.email) &&
                 Objects.equals(phoneNumber, userDto.phoneNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, password, email, phoneNumber);
+        return Objects.hash(username, email, phoneNumber);
     }
 
     @Override
     public String toString() {
         return "UserDto{" +
                 "username='" + username + '\'' +
-                ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';

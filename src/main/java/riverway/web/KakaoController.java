@@ -51,7 +51,6 @@ public class KakaoController {
             model.addAttribute("profileImage", userInfo.get("properties").get("profile_image").asText());
             model.addAttribute("socialCode", SocialCode.KAKAO);
             log.debug("nickname : {}", userInfo.get("properties").get("nickname").asText());
-//            model.addAttribute("")
             return "/user/form";
         }
         session.setAttribute(HttpSessionUtils.USER_SESSION_KEY, maybeUser.get());
