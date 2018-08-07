@@ -15,11 +15,9 @@ public class User {
     private Long id;
 
     @Size(min = 2, max = 10)
-    @Column(nullable = false)
     private String username;
 
     @Size(min = 6)
-    @Column(nullable = false)
     private String password;
 
     private String email;

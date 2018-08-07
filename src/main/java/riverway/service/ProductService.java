@@ -4,25 +4,25 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import riverway.domain.Item;
+import riverway.domain.Product;
 import riverway.domain.repository.ItemRepository;
-import riverway.dto.ItemDto;
+import riverway.dto.ProductDto;
 
 import javax.persistence.EntityNotFoundException;
 
 @Service
-public class ItemService {
+public class ProductService {
 
-    private static final Logger log = LoggerFactory.getLogger(ItemService.class);
+    private static final Logger log = LoggerFactory.getLogger(ProductService.class);
 
     @Autowired
     private ItemRepository itemRepository;
 
-    public Item register(ItemDto newItem){
-        return itemRepository.save(newItem.toItem());
+    public Product register(ProductDto item){
+        return itemRepository.save(item.toProduct());
     }
 
-    public Item findItem(Long id) {
+    public Product findItem(Long id) {
         return itemRepository.findById(id).orElseThrow(EntityNotFoundException::new);
     }
 }

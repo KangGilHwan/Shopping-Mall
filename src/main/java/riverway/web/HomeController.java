@@ -25,4 +25,14 @@ public class HomeController {
     public String create(){
         return "/user/form";
     }
+
+    @GetMapping("/products")
+    public String show(){
+        return "/product/shop";
+    }
+
+    @GetMapping("/products/form")
+    public String createForm(){
+        return "/product/form";
+    }
 }

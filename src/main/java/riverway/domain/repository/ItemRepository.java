@@ -1,7 +1,7 @@
 package riverway.domain.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import riverway.domain.Item;
+import riverway.domain.Product;
 
-public interface ItemRepository extends JpaRepository<Item, Long>{
+public interface ItemRepository extends JpaRepository<Product, Long>{
 }

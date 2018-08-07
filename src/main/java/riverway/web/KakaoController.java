@@ -2,7 +2,6 @@ package riverway.web;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.catalina.manager.util.SessionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +18,7 @@ import org.springframework.web.client.RestTemplate;
 import riverway.domain.SocialCode;
 import riverway.domain.User;
 import riverway.dto.KakaoDto;
+import riverway.dto.UserDto;
 import riverway.service.UserService;
 
 import javax.servlet.http.HttpSession;
@@ -29,7 +29,7 @@ import java.util.Optional;
 @Controller
 @RequestMapping("/api/kakao")
 public class KakaoController {
-//
+    //
     @Autowired
     private UserService userService;
 
@@ -45,13 +45,11 @@ public class KakaoController {
         log.debug("UserInfoId : {}", userInfo.get("id"));
         Optional<User> maybeUser = userService.loginKakao(userInfo.get("id").asLong());
         log.debug("KakaoOauthDto : {}", response);
-        if (!maybeUser.isPresent()){
-            model.addAttribute("socialId", userInfo.get("id").asText());
-            model.addAttribute("username", userInfo.get("properties").get("nickname").asText());
-            model.addAttribute("profileImage", userInfo.get("properties").get("profile_image").asText());
-            model.addAttribute("socialCode", SocialCode.KAKAO);
-            log.debug("nickname : {}", userInfo.get("properties").get("nickname").asText());
-            return "/user/form";
+        if (!maybeUser.isPresent()) {
+            UserDto userDto = UserDto.build()
+                    .setSocialId(userInfo.get("id").asLong())
+                    .setSocialCode(SocialCode.KAKAO);
+            maybeUser = Optional.of(userService.socialRegister(userDto));
         }
         session.setAttribute(HttpSessionUtils.USER_SESSION_KEY, maybeUser.get());
         return "redirect:/";

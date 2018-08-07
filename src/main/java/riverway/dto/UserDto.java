@@ -16,7 +16,7 @@ public class UserDto {
     private String email;
     private String phoneNumber;
     private Long socialId;
-    private String socialCode;
+    private SocialCode socialCode;
 
     public UserDto() {
     }
@@ -29,7 +29,7 @@ public class UserDto {
     }
 
     public User toUser(){
-        return new User(username, password, email, phoneNumber, socialId, getSocialCode());
+        return new User(username, password, email, phoneNumber, socialId, socialCode);
     }
 
     public static UserDto build(){
@@ -81,14 +81,11 @@ public class UserDto {
         return this;
     }
 
-    public SocialCode getSocialCode() {
-        if (socialCode == null || socialCode.equals("")){
-            return null;
-        }
-        return SocialCode.valueOf(socialCode);
+    public String getSocialCode() {
+        return socialCode.name();
     }
 
-    public UserDto setSocialCode(String socialCode) {
+    public UserDto setSocialCode(SocialCode socialCode) {
         this.socialCode = socialCode;
         return this;
     }

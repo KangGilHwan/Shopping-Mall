@@ -32,6 +32,10 @@ public class UserService {
         return userRepository.save(signUpUser.setPassword(encodedPassword).toUser());
     }
 
+    public User socialRegister(UserDto signUpUser) {
+        return userRepository.save(signUpUser.toUser());
+    }
+
     public User findUser(Long id) {
         return userRepository.findById(id).orElseThrow(EntityNotFoundException::new);
     }
