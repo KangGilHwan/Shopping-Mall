@@ -1,8 +1,11 @@
 package riverway.dto;
 
+import riverway.domain.Attachment;
 import riverway.domain.Product;
 
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class ProductDto {
@@ -14,6 +17,8 @@ public class ProductDto {
     private Integer price;
 
     private String description;
+
+    private List<Attachment> images = new ArrayList<>();
 
     public ProductDto() {
     }
@@ -65,6 +70,15 @@ public class ProductDto {
 
     public ProductDto setDescription(String description) {
         this.description = description;
+        return this;
+    }
+
+    public List<Attachment> getImages() {
+        return images;
+    }
+
+    public ProductDto setImages(List<Attachment> images) {
+        this.images = images;
         return this;
     }
 

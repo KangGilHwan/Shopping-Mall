@@ -3,6 +3,8 @@ package riverway.domain;
 import riverway.dto.ProductDto;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Product {
@@ -20,6 +22,9 @@ public class Product {
     @Lob
     private String description;
 
+    @OneToMany(mappedBy = "product")
+    List<Attachment> images = new ArrayList<>();
+
     public Product() {
     }
 
@@ -33,7 +38,8 @@ public class Product {
         return ProductDto.build()
                 .setName(name)
                 .setPrice(price)
-                .setDescription(description);
+                .setDescription(description)
+                .setImages(images);
     }
 
     public Long getId() {

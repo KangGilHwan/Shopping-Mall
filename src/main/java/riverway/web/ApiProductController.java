@@ -27,7 +27,8 @@ public class ApiProductController {
     public ResponseEntity<Void> create(@LoginUser User loginUser, ProductDto productDto, MultipartFile image) {
         log.debug("New Product : {}", productDto);
         log.debug("Image : {}", image.getOriginalFilename());
-        Product product = productService.register(productDto);
+
+        Product product = productService.register(loginUser, productDto, image);
         URI uri = URI.create(String.format("/api/products/%d", product.getId()));
         return ResponseEntity.created(uri).build();
     }
