@@ -1,6 +1,6 @@
 package riverway.Exception;
 
-public class UnAutorizedException extends RuntimeException{
+public class UnAutorizedException extends RuntimeException {
 
     public UnAutorizedException() {
         super();

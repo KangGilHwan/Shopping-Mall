@@ -2,7 +2,6 @@ package riverway.domain;
 
 import riverway.dto.UserDto;
 
-import javax.jws.soap.SOAPBinding;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
@@ -27,6 +26,10 @@ public class User {
 
     private Long socialId;
 
+    @Column(columnDefinition = "varchar(30) default 'CONSUMER'")
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
     @Column
     @Enumerated(EnumType.STRING)
     private SocialCode socialCode;
@@ -43,12 +46,16 @@ public class User {
         this.socialCode = socialCode;
     }
 
-    public UserDto toUserDto(){
+    public UserDto toUserDto() {
         return UserDto.build()
                 .setUsername(username)
                 .setPassword(password)
                 .setPhoneNumber(phoneNumber)
                 .setEmail(email);
+    }
+
+    public boolean isSeller() {
+        return Role.hasAdmin(role);
     }
 
     public Long getId() {
@@ -63,7 +70,7 @@ public class User {
         return password;
     }
 
-    public boolean isGuestUser(){
+    public boolean isGuestUser() {
         return false;
     }
 
@@ -71,10 +78,10 @@ public class User {
         return this.password.equals(password);
     }
 
-    private static class GuestUser extends User{
+    private static class GuestUser extends User {
 
         @Override
-        public boolean isGuestUser(){
+        public boolean isGuestUser() {
             return true;
         }
     }
@@ -88,6 +95,7 @@ public class User {
                 ", email='" + email + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", socialId=" + socialId +
+                ", role=" + role +
                 ", socialCode=" + socialCode +
                 '}';
     }

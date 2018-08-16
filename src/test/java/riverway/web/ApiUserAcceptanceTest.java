@@ -9,11 +9,8 @@ import org.springframework.util.MultiValueMap;
 import riverway.dto.UserDto;
 import support.test.AcceptanceTest;
 
-import java.util.Arrays;
-
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
 
 public class ApiUserAcceptanceTest extends AcceptanceTest {
 
@@ -31,7 +28,7 @@ public class ApiUserAcceptanceTest extends AcceptanceTest {
         assertThat(signUpUser, is(user));
     }
 
-    public UserDto creatUser(String username){
+    public UserDto creatUser(String username) {
         UserDto signUpUser = UserDto.build()
                 .setUsername(username)
                 .setEmail("test@naver.com")
@@ -41,14 +38,14 @@ public class ApiUserAcceptanceTest extends AcceptanceTest {
     }
 
     @Test
-    public void findUser_no_user(){
+    public void findUser_no_user() {
         ResponseEntity<String> response = template.getForEntity("/api/users/200", String.class);
         log.debug("Saved User : {}", response.getBody());
-        assertThat(response.getBody() ,is("데이터를 찾을 수 없습니다."));
+        assertThat(response.getBody(), is("데이터를 찾을 수 없습니다."));
     }
 
     @Test
-    public void login_success(){
+    public void login_success() {
         UserDto signUpUser = creatUser("riverway3");
         ResponseEntity<String> response = template.postForEntity("/api/users", signUpUser, String.class);
         assertThat(response.getStatusCode(), is(HttpStatus.CREATED));
@@ -60,7 +57,7 @@ public class ApiUserAcceptanceTest extends AcceptanceTest {
     }
 
     @Test
-    public void login_다른_비밀번호(){
+    public void login_다른_비밀번호() {
         UserDto signUpUser = creatUser("riverway4");
         ResponseEntity<String> response = template.postForEntity("/api/users", signUpUser, String.class);
         assertThat(response.getStatusCode(), is(HttpStatus.CREATED));
@@ -71,7 +68,7 @@ public class ApiUserAcceptanceTest extends AcceptanceTest {
         log.debug("response : {}", response);
     }
 
-    public HttpEntity<MultiValueMap<String, Object>> login(String username ,String password){
+    public HttpEntity<MultiValueMap<String, Object>> login(String username, String password) {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
 

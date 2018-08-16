@@ -9,8 +9,6 @@ import riverway.Exception.UnAutorizedException;
 import riverway.domain.User;
 import riverway.web.HttpSessionUtils;
 
-import javax.servlet.http.HttpSession;
-
 public class LoginUserHandlerMethodArgumentResolver implements HandlerMethodArgumentResolver {
 
     @Override
@@ -20,13 +18,13 @@ public class LoginUserHandlerMethodArgumentResolver implements HandlerMethodArgu
 
     @Override
     public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
-        User user =  HttpSessionUtils.getUserFromSession(webRequest);
-        if(!user.isGuestUser()){
+        User user = HttpSessionUtils.getUserFromSession(webRequest);
+        if (!user.isGuestUser()) {
             return user;
         }
 
         LoginUser loginUser = parameter.getParameterAnnotation(LoginUser.class);
-        if (loginUser.required()){
+        if (loginUser.required()) {
             throw new UnAutorizedException("로그인이 필요합니다.");
         }
         return user;

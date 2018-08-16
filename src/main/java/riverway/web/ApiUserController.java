@@ -44,7 +44,13 @@ public class ApiUserController {
     public ResponseEntity<Void> login(String username, String password, HttpSession session) throws UnAuthenticationException {
         log.debug("username : {} , password : {}", username, password);
         session.setAttribute(HttpSessionUtils.USER_SESSION_KEY, userService.login(username, password));
-//        log.debug("로그인 실패 : {}", e.getMessage());
         return new ResponseEntity<Void>(HttpStatus.OK);
+    }
+
+    @PostMapping("/logout")
+    public ResponseEntity<Void> logout(HttpSession session){
+        session.removeAttribute(HttpSessionUtils.USER_SESSION_KEY);
+        log.debug("Logout!");
+        return ResponseEntity.ok().build();
     }
 }

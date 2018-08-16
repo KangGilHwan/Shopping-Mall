@@ -17,6 +17,12 @@
                     <a href="#" class="flex-c-m trans-04 p-lr-25">
                         My Account
                     </a>
+
+                    {{#loginedUser}}
+                    <a id="logoutBtn" href="/api/users/logout" class="flex-c-m trans-04 p-lr-25">
+                        Sign out
+                    </a>
+                    {{/loginedUser}}
                     {{^loginedUser}}
                     <a href="/login" class="flex-c-m trans-04 p-lr-25">
                         Sign in

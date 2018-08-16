@@ -1,6 +1,8 @@
 $("#user-sign-up").on("click","#sign-up-form button", signUp);
-$(document).on("click", "#login-btn", login);
 $("#product-form").on("click", "#product-btn", product);
+$(document).on("click", "#login-btn", login);
+$(document).on("click", "#logoutBtn", logout);
+$(document).on("click", "#cartBtn", addCart);
 
 function signUp(e){
 e.preventDefault();
@@ -13,8 +15,6 @@ username : $("#username").val(),
 password : $("#password").val(),
 email : $("#email").val(),
 phoneNumber : $("#phoneNumber").val()
-//socialId : $("#socialId").val(),
-//socialCode : $("#socialCode").val()
 };
 
 console.log("queryString : " + JSON.stringify(data));
@@ -39,8 +39,6 @@ console.log("Hi");
 
 var url = $("#login-form").attr("action");
 console.log("url :" + url);
-//console.log("name :" + $("#login-username").val());
-//console.log("password :" + $("#login-password").val());
 
 var data = $("#login-form").serialize();
 console.log("data :" + data);
@@ -56,7 +54,7 @@ console.log("status :" + status);
 location.href = "/";
 },
 error : function (xhr, status){
-alert("error");
+alert("아이디와 비밀번호를 확인해주세요.");
 }
 });
 };
@@ -74,7 +72,7 @@ var formData = new FormData();
 formData.append("name", $("#product-name").val());
 formData.append("price", $("#product-price").val());
 formData.append("image", $("#product-file")[0].files[0]);
-formData.append("description", $("#product-description").text());
+formData.append("description", $("#product-description").val());
 console.log("url : " + url);
 var image = $("#product-file").val();
 console.log("image : " + image);
@@ -83,17 +81,72 @@ $.ajax({
 type : 'post',
 url : url,
 data : formData,
-dataType : "json",
 processData: false,
 contentType: false,
 success : function(data, status){
 console.log("data :" + data);
 console.log("status :" + status);
-//location.href = "/";
+location.href = "/products";
 },
 error : function (xhr, status){
 alert("error");
 }
 
 })
+};
+
+function logout(e){
+e.preventDefault();
+console.log("Bye");
+
+var url = document.getElementById('logoutBtn').getAttribute('href');
+console.log("url :" + url);
+
+$.ajax({
+type : 'post',
+url : url,
+success : function(data, status){
+console.log("data :" + data);
+console.log("status :" + status);
+location.href = "/";
+},
+error : function (xhr, status){
+alert("error");
+}
+});
+};
+
+function addCart(e){
+e.preventDefault();
+console.log("Hello");
+var id = $("#cartId").val();
+var url = '/api/products/' + id + '/cart';
+console.log("url :" + url);
+var size = document.getElementById('size_select');
+console.log("size value : " + size);
+var sizeValue = size[size.selectedIndex].value;
+console.log("size value : " + sizeValue);
+var amount = $('#itemAmount').val();
+console.log("amount value : " + amount);
+
+
+var data = {
+size : sizeValue,
+amount : amount
+};
+
+$.ajax({
+type : 'post',
+url : url,
+data : JSON.stringify(data),
+contentType : "application/json",
+success : function(data, status){
+console.log("data :" + data);
+console.log("status :" + status);
+location.href = "/products";
+},
+error : function (xhr, status){
+alert("error");
+}
+});
 };

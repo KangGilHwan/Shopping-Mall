@@ -2,6 +2,7 @@ package riverway.dto;
 
 import riverway.domain.Attachment;
 import riverway.domain.Product;
+import riverway.domain.User;
 
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
@@ -18,23 +19,25 @@ public class ProductDto {
 
     private String description;
 
+    private User seller;
+
     private List<Attachment> images = new ArrayList<>();
 
     public ProductDto() {
     }
 
-    private ProductDto(String name, Integer price, String description){
+    private ProductDto(String name, Integer price, String description) {
         this.name = name;
         this.price = price;
         this.description = description;
     }
 
-    public static ProductDto build(){
+    public static ProductDto build() {
         return new ProductDto();
     }
 
-    public Product toProduct(){
-        return new Product(name, price, description);
+    public Product toProduct() {
+        return new Product(name, price, description, seller);
     }
 
     public Long getId() {
@@ -70,6 +73,15 @@ public class ProductDto {
 
     public ProductDto setDescription(String description) {
         this.description = description;
+        return this;
+    }
+
+    public User getSeller() {
+        return seller;
+    }
+
+    public ProductDto setSeller(User seller) {
+        this.seller = seller;
         return this;
     }
 

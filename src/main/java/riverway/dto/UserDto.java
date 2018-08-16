@@ -21,18 +21,18 @@ public class UserDto {
     public UserDto() {
     }
 
-    private UserDto(String username, String password, String email, String phoneNumber){
+    private UserDto(String username, String password, String email, String phoneNumber) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.phoneNumber = phoneNumber;
     }
 
-    public User toUser(){
+    public User toUser() {
         return new User(username, password, email, phoneNumber, socialId, socialCode);
     }
 
-    public static UserDto build(){
+    public static UserDto build() {
         return new UserDto();
     }
 
@@ -81,8 +81,8 @@ public class UserDto {
         return this;
     }
 
-    public String getSocialCode() {
-        return socialCode.name();
+    public SocialCode getSocialCode() {
+        return socialCode;
     }
 
     public UserDto setSocialCode(SocialCode socialCode) {

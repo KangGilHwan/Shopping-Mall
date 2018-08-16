@@ -12,6 +12,7 @@ import riverway.dto.ProductDto;
 import riverway.security.LoginUser;
 import riverway.service.ProductService;
 
+import java.io.IOException;
 import java.net.URI;
 
 @RestController
@@ -24,12 +25,13 @@ public class ApiProductController {
     private ProductService productService;
 
     @PostMapping("")
-    public ResponseEntity<Void> create(@LoginUser User loginUser, ProductDto productDto, MultipartFile image) {
+    public ResponseEntity<Void> create(@LoginUser User loginUser, ProductDto productDto, MultipartFile image) throws IOException{
         log.debug("New Product : {}", productDto);
         log.debug("Image : {}", image.getOriginalFilename());
 
         Product product = productService.register(loginUser, productDto, image);
         URI uri = URI.create(String.format("/api/products/%d", product.getId()));
+        log.debug("Check : {}", product);
         return ResponseEntity.created(uri).build();
     }
 

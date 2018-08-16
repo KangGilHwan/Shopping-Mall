@@ -1,1 +1,2 @@
-INSERT INTO user (id, username, password, phone_number, email) VALUES(1, 'river', '$2a$10$v0n.ICi8CSDPrwUjZqSsSu0B18.epFOyeH12g3Ko7.gWmy.95nLAa', '01012345678', 'river@test.com');
+INSERT INTO user (id, username, password, phone_number, email, role) VALUES(1, 'river', '$2a$10$v0n.ICi8CSDPrwUjZqSsSu0B18.epFOyeH12g3Ko7.gWmy.95nLAa', '01012345678', 'river@test.com', 'SELLER');
+INSERT INTO user (id, username, password, phone_number, email) VALUES(2, 'river2', '$2a$10$v0n.ICi8CSDPrwUjZqSsSu0B18.epFOyeH12g3Ko7.gWmy.95nLAa', '01012345678', 'river@test.com');

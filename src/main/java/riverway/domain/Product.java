@@ -5,6 +5,7 @@ import riverway.dto.ProductDto;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 public class Product {
@@ -22,27 +23,81 @@ public class Product {
     @Lob
     private String description;
 
+    @ManyToOne
+    @JoinColumn(name = "seller_id")
+    private User seller;
+
     @OneToMany(mappedBy = "product")
-    List<Attachment> images = new ArrayList<>();
+    private List<Attachment> images = new ArrayList<>();
 
     public Product() {
     }
 
-    public Product(String name, Integer price, String description) {
+    public Product(String name, Integer price, String description, User seller) {
         this.name = name;
         this.price = price;
         this.description = description;
+        this.seller = seller;
     }
 
     public ProductDto toProductDto() {
         return ProductDto.build()
+                .setId(id)
                 .setName(name)
                 .setPrice(price)
                 .setDescription(description)
+                .setSeller(seller)
                 .setImages(images);
     }
 
     public Long getId() {
         return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public User getSeller() {
+        return seller;
+    }
+
+    public List<Attachment> getImages() {
+        return images;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return Objects.equals(id, product.id) &&
+                Objects.equals(name, product.name) &&
+                Objects.equals(price, product.price) &&
+                Objects.equals(description, product.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, price, description);
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", description='" + description + '\'' +
+                ", seller=" + seller +
+                '}';
     }
 }
