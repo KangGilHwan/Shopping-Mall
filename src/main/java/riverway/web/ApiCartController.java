@@ -30,7 +30,6 @@ public class ApiCartController {
         Cart cart = HttpSessionUtils.getCartFromSession(session);
         CartProduct cartProduct = new CartProduct(product, option);
         cart.addCart(cartProduct);
-        log.debug("Equal : {}", cart.equals(HttpSessionUtils.getCartFromSession(session)));
         log.debug("CartProduct : {}", cartProduct);
         log.debug("CartList : {}", cart);
         return ResponseEntity.ok().body(cart);

@@ -19,7 +19,7 @@ public class Cart {
     public void addCart(CartProduct newItem) {
         for (CartProduct product : cartProducts) {
             if (product.equals(newItem)) {
-                log.debug("제품 사이즈가 같은 경우");
+                log.debug("제품과 사이즈가 같은 경우");
                 product.addAmount(newItem);
                 return;
             }
@@ -35,20 +35,6 @@ public class Cart {
 
     public List<CartProduct> getCartProducts() {
         return cartProducts;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Cart cart = (Cart) o;
-        return Objects.equals(cartProducts, cart.cartProducts);
-    }
-
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(cartProducts);
     }
 
     @Override
