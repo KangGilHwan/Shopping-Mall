@@ -20,7 +20,7 @@ public class ApiProductAcceptanceTest extends AcceptanceTest {
     private static final Logger log = LoggerFactory.getLogger(ApiProductAcceptanceTest.class);
 
     @Test
-    public void create_consumer() {
+    public void 상품등록_consumer() {
         HttpEntity<MultiValueMap<String, Object>> request = HtmlFormDataBuilder.multipartFormData()
                 .addParameter("name", "TeeShirt")
                 .addParameter("price", 10000)
@@ -33,7 +33,7 @@ public class ApiProductAcceptanceTest extends AcceptanceTest {
     }
 
     @Test
-    public void create_seller() {
+    public void 상품등록_seller() {
         HttpEntity<MultiValueMap<String, Object>> request = HtmlFormDataBuilder.multipartFormData()
                 .addParameter("name", "TeeShirt")
                 .addParameter("price", 10000)

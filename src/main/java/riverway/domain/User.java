@@ -55,6 +55,7 @@ public class User {
                 .setEmail(email)
                 .setRole(role);
     }
+
     public boolean matchPassword(String password) {
         return this.password.equals(password);
     }
