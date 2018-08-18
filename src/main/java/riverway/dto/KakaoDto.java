@@ -4,17 +4,17 @@ import java.util.Objects;
 
 public class KakaoDto {
 
-    String access_token;
+    private String access_token;
 
-    String token_type;
+    private String token_type;
 
-    String refresh_token;
+    private String refresh_token;
 
-    String expires_in;
+    private String expires_in;
 
-    String scope;
+    private String scope;
 
-    String refresh_token_expires_in;
+    private String refresh_token_expires_in;
 
     public KakaoDto() {
     }

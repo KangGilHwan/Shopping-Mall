@@ -5,7 +5,7 @@ import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
-import riverway.Exception.UnAutorizedException;
+import riverway.exception.UnAutorizedException;
 import riverway.domain.User;
 import riverway.web.HttpSessionUtils;
 

@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Cart {
 
@@ -30,6 +31,24 @@ public class Cart {
         return cartProducts.stream()
                 .mapToInt(CartProduct::getPrice)
                 .sum();
+    }
+
+    public List<CartProduct> getCartProducts() {
+        return cartProducts;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cart cart = (Cart) o;
+        return Objects.equals(cartProducts, cart.cartProducts);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(cartProducts);
     }
 
     @Override

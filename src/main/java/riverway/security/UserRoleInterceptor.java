@@ -3,7 +3,7 @@ package riverway.security;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
-import riverway.Exception.UnAutorizedException;
+import riverway.exception.UnAutorizedException;
 import riverway.domain.User;
 import riverway.web.HttpSessionUtils;
 

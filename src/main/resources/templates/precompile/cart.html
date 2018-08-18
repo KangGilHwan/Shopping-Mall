@@ -1,0 +1,21 @@
+<ul class="header-cart-wrapitem w-full" id="cartList">
+{{#products}}
+<li class="header-cart-product flex-w flex-t m-b-12">
+    <div class="header-cart-product-img">
+        {{#product.images}}
+        <img src="{{path}}" style='max-height: 80px; max-width: 60px; object-fit: contain'/>
+        {{/product.images}}
+    </div>
+
+    <div class="header-cart-product-txt p-t-8">
+        <a href="#" class="header-cart-product-name m-b-18 hov-cl1 trans-04">
+            {{product.name}}
+        </a>
+
+        <div class="header-cart-product-info">
+            {{option.size}} Size {{option.amount}} x ${{product.price}}
+        </div>
+    </div>
+</li>
+{{/products}}
+</ul>

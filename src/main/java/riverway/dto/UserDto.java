@@ -1,5 +1,6 @@
 package riverway.dto;
 
+import riverway.domain.Role;
 import riverway.domain.SocialCode;
 import riverway.domain.User;
 
@@ -17,6 +18,7 @@ public class UserDto {
     private String phoneNumber;
     private Long socialId;
     private SocialCode socialCode;
+    private Role role;
 
     public UserDto() {
     }
@@ -28,8 +30,12 @@ public class UserDto {
         this.phoneNumber = phoneNumber;
     }
 
+    public User toConsumer() {
+        return new User(username, password, email, phoneNumber, socialId, socialCode, Role.CONSUMER);
+    }
+
     public User toUser() {
-        return new User(username, password, email, phoneNumber, socialId, socialCode);
+        return new User(username, password, email, phoneNumber, socialId, socialCode, role);
     }
 
     public static UserDto build() {
@@ -90,6 +96,15 @@ public class UserDto {
         return this;
     }
 
+    public Role getRole() {
+        return role;
+    }
+
+    public UserDto setRole(Role role) {
+        this.role = role;
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -108,9 +123,14 @@ public class UserDto {
     @Override
     public String toString() {
         return "UserDto{" +
-                "username='" + username + '\'' +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
+                ", socialId=" + socialId +
+                ", socialCode=" + socialCode +
+                ", role=" + role +
                 '}';
     }
 }

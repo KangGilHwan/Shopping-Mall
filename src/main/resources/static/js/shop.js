@@ -139,11 +139,29 @@ $.ajax({
 type : 'post',
 url : url,
 data : JSON.stringify(data),
+dataType : 'json',
 contentType : "application/json",
 success : function(data, status){
 console.log("data :" + data);
+console.log("data :" + JSON.stringify(data));
+var dataJSON = JSON.stringify(data);
+//var source = $("#cart-template").html();
+//console.log("source : " + source);
+
+var temp = Handlebars.templates['precompile/cart'];
+console.log("template : " + temp);
+var cart = {
+products : data.cartProducts
+};
+console.log("cartItem : " + JSON.stringify(cart.products));
+var html = temp(cart);
+console.log("Html : " + html);
+$("#cartList").remove();
+$("#cartList-div").prepend(html);
+var totalPrice = data.totalPrice;
 console.log("status :" + status);
-location.href = "/products";
+document.getElementById('totalPrice').innerHTML="Total: $" + totalPrice;
+//location.href = "/products";
 },
 error : function (xhr, status){
 alert("error");

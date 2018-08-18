@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
-import riverway.Exception.UnAuthenticationException;
+import riverway.exception.UnAuthenticationException;
 import riverway.domain.User;
 import riverway.service.UserService;
 import riverway.web.HttpSessionUtils;

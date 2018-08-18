@@ -26,24 +26,25 @@ public class User {
 
     private Long socialId;
 
-    @Column(columnDefinition = "varchar(30) default 'CONSUMER'")
-    @Enumerated(EnumType.STRING)
-    private Role role;
-
     @Column
     @Enumerated(EnumType.STRING)
     private SocialCode socialCode;
 
+    @Column(columnDefinition = "varchar(30) default 'CONSUMER'")
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
     public User() {
     }
 
-    public User(String username, String password, String email, String phoneNumber, Long socialId, SocialCode socialCode) {
+    public User(String username, String password, String email, String phoneNumber, Long socialId, SocialCode socialCode, Role role) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.socialId = socialId;
         this.socialCode = socialCode;
+        this.role = role;
     }
 
     public UserDto toUserDto() {
@@ -51,7 +52,11 @@ public class User {
                 .setUsername(username)
                 .setPassword(password)
                 .setPhoneNumber(phoneNumber)
-                .setEmail(email);
+                .setEmail(email)
+                .setRole(role);
+    }
+    public boolean matchPassword(String password) {
+        return this.password.equals(password);
     }
 
     public boolean isSeller() {
@@ -72,10 +77,6 @@ public class User {
 
     public boolean isGuestUser() {
         return false;
-    }
-
-    public boolean matchPassword(String password) {
-        return this.password.equals(password);
     }
 
     private static class GuestUser extends User {

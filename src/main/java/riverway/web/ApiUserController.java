@@ -7,7 +7,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import riverway.Exception.UnAuthenticationException;
+import riverway.exception.UnAuthenticationException;
 import riverway.domain.User;
 import riverway.dto.UserDto;
 import riverway.service.UserService;
@@ -30,13 +30,13 @@ public class ApiUserController {
         User savedUser = userService.register(signUpUser);
         log.debug("Login : {}", savedUser);
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(URI.create("/api/users/" + savedUser.getId()));
-        return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
+        URI uri = URI.create("/api/users/" + savedUser.getId());
+        return ResponseEntity.created(uri).build();
     }
 
     @GetMapping("/{id}")
     public UserDto show(@PathVariable Long id) {
+        log.debug("User : {}",userService.findUser(id));
         return userService.findUser(id).toUserDto();
     }
 
@@ -44,7 +44,7 @@ public class ApiUserController {
     public ResponseEntity<Void> login(String username, String password, HttpSession session) throws UnAuthenticationException {
         log.debug("username : {} , password : {}", username, password);
         session.setAttribute(HttpSessionUtils.USER_SESSION_KEY, userService.login(username, password));
-        return new ResponseEntity<Void>(HttpStatus.OK);
+        return ResponseEntity.ok().build();
     }
 
     @PostMapping("/logout")

@@ -1,4 +1,4 @@
-package riverway.Exception;
+package riverway.exception;
 
 public class UnAutorizedException extends RuntimeException {
 

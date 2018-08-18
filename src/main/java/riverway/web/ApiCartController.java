@@ -24,14 +24,15 @@ public class ApiCartController {
     private ProductService productService;
 
     @PostMapping("")
-    public ResponseEntity<Void> addCart(@PathVariable Long id, @RequestBody Option option, HttpSession session){
-        Product product = productService.findItem(id);
+    public ResponseEntity<Cart> addCart(@PathVariable Long id, @RequestBody Option option, HttpSession session){
         log.debug("Option : {}", option);
+        Product product = productService.findItem(id);
         Cart cart = HttpSessionUtils.getCartFromSession(session);
         CartProduct cartProduct = new CartProduct(product, option);
-        log.debug("CartProduct : {}", cartProduct);
         cart.addCart(cartProduct);
+        log.debug("Equal : {}", cart.equals(HttpSessionUtils.getCartFromSession(session)));
+        log.debug("CartProduct : {}", cartProduct);
         log.debug("CartList : {}", cart);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok().body(cart);
     }
 }

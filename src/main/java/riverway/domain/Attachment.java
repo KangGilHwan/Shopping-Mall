@@ -53,17 +53,7 @@ public class Attachment {
     }
 
     public String getPath() {
-        System.out.println("this:"+savedName);
-//        return Paths.get(path + File.separator + savedName);
     return String.format("/images/item/%s", savedName.trim());
-    }
-
-
-    public static String makePath(String path){
-        System.out.println("/" + path.substring(path.indexOf("static") + 7));
-//        /images/product/9302d0c77a0f4d32bc2605c7f7e6fabe.jpg
-//        return "/" + path.substring(path.indexOf("static") + 7);
-        return "/images/product";
     }
 
     public static Attachment of(String path, Product product, MultipartFile file) {

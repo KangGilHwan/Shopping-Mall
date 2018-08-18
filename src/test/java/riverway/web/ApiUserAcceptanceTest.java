@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.*;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+import riverway.domain.Role;
 import riverway.dto.UserDto;
 import support.test.AcceptanceTest;
 
@@ -17,18 +18,19 @@ public class ApiUserAcceptanceTest extends AcceptanceTest {
     private static final Logger log = LoggerFactory.getLogger(ApiUserAcceptanceTest.class);
 
     @Test
-    public void create() {
-        UserDto signUpUser = creatUser("riverway");
+    public void create_consumer() {
+        UserDto signUpUser = creatConsumer("riverway");
         ResponseEntity<String> response = template.postForEntity("/api/users", signUpUser, String.class);
         assertThat(response.getStatusCode(), is(HttpStatus.CREATED));
 
         String location = response.getHeaders().getLocation().getPath();
-        UserDto user = template.getForObject(location, UserDto.class);
-        log.debug("Saved User : {}", user);
-        assertThat(signUpUser, is(user));
+        UserDto dbUser = template.getForObject(location, UserDto.class);
+        log.debug("Saved User : {}", dbUser);
+        assertThat(signUpUser, is(dbUser));
+        assertThat(dbUser.getRole(), is(Role.CONSUMER));
     }
 
-    public UserDto creatUser(String username) {
+    public UserDto creatConsumer(String username) {
         UserDto signUpUser = UserDto.build()
                 .setUsername(username)
                 .setEmail("test@naver.com")
@@ -46,7 +48,7 @@ public class ApiUserAcceptanceTest extends AcceptanceTest {
 
     @Test
     public void login_success() {
-        UserDto signUpUser = creatUser("riverway3");
+        UserDto signUpUser = creatConsumer("riverway3");
         ResponseEntity<String> response = template.postForEntity("/api/users", signUpUser, String.class);
         assertThat(response.getStatusCode(), is(HttpStatus.CREATED));
 
@@ -58,7 +60,7 @@ public class ApiUserAcceptanceTest extends AcceptanceTest {
 
     @Test
     public void login_다른_비밀번호() {
-        UserDto signUpUser = creatUser("riverway4");
+        UserDto signUpUser = creatConsumer("riverway4");
         ResponseEntity<String> response = template.postForEntity("/api/users", signUpUser, String.class);
         assertThat(response.getStatusCode(), is(HttpStatus.CREATED));
 

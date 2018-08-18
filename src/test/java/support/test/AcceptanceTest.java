@@ -37,8 +37,12 @@ public abstract class AcceptanceTest {
         return template.withBasicAuth(loginUser.getUsername(), loginUser.getPassword());
     }
 
-    public TestRestTemplate basicAuthTemplate() {
+    public TestRestTemplate basicAuthTemplateSeller() {
         return template.withBasicAuth("river", "123456");
+    }
+
+    public TestRestTemplate basicAuthTemplateConsumer() {
+        return template.withBasicAuth("river2", "123456");
     }
 
     protected User findDefaultUser() {

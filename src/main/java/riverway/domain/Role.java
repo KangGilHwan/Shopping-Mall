@@ -14,10 +14,6 @@ public enum Role {
         this.roleName = roleName;
     }
 
-    public List<String> getRoleName() {
-        return roleName;
-    }
-
     public static boolean hasAdmin(Role role){
         return role.roleName.stream().anyMatch(r-> r.equals("ROLE_ADMIN"));
     }

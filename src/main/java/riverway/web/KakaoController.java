@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -29,12 +30,15 @@ import java.util.Optional;
 @Controller
 @RequestMapping("/api/kakao")
 public class KakaoController {
-    //
+
+    private static final Logger log = LoggerFactory.getLogger(KakaoController.class);
+
+    @Value("${kakao.client.id}")
+    private String CLIENT_ID;
+
     @Autowired
     private UserService userService;
 
-    private final String CLIENT_ID = "e28a0bfdf53c249ef1f40e3786e62e5b";
-    private static final Logger log = LoggerFactory.getLogger(KakaoController.class);
     private RestTemplate restTemplate = new RestTemplate();
 
     @GetMapping("/oauth")

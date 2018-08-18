@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import riverway.Exception.UnAuthenticationException;
+import riverway.exception.UnAuthenticationException;
 import riverway.domain.SocialCode;
 import riverway.domain.User;
 import riverway.domain.repository.UserRepository;
@@ -27,11 +27,11 @@ public class UserService {
 
     public User register(UserDto signUpUser) {
         String encodedPassword = bCryptPasswordEncoder.encode(signUpUser.getPassword());
-        return userRepository.save(signUpUser.setPassword(encodedPassword).toUser());
+        return userRepository.save(signUpUser.setPassword(encodedPassword).toConsumer());
     }
 
     public User socialRegister(UserDto signUpUser) {
-        return userRepository.save(signUpUser.toUser());
+        return userRepository.save(signUpUser.toConsumer());
     }
 
     public User findUser(Long id) {
