@@ -1,6 +1,5 @@
 package riverway.web;
 
-import org.apache.catalina.manager.util.SessionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,14 +23,32 @@ public class ApiCartController {
     private ProductService productService;
 
     @PostMapping("")
-    public ResponseEntity<Cart> addCart(@PathVariable Long id, @RequestBody Option option, HttpSession session){
+    public ResponseEntity<Cart> addCart(@PathVariable Long id, @RequestBody Option option, HttpSession session) {
         log.debug("Option : {}", option);
         Product product = productService.findItem(id);
-        Cart cart = HttpSessionUtils.getCartFromSession(session);
         CartProduct cartProduct = new CartProduct(product, option);
+        Cart cart = HttpSessionUtils.getCartFromSession(session);
         cart.addCart(cartProduct);
         log.debug("CartProduct : {}", cartProduct);
         log.debug("CartList : {}", cart);
         return ResponseEntity.ok().body(cart);
+    }
+
+    @GetMapping("")
+    public ResponseEntity<Cart> showCart(@PathVariable Long id, HttpSession session){
+        Cart cart = HttpSessionUtils.getCartFromSession(session);
+        log.debug("CartList : {}", cart);
+        return ResponseEntity.ok().body(cart);
+    }
+
+    @DeleteMapping("")
+    public ResponseEntity<Void> delete(@PathVariable Long id, @RequestBody Option option, HttpSession session) {
+        log.debug("Option : {}", option);
+        Product product = productService.findItem(id);
+        CartProduct cartProduct = new CartProduct(product, option);
+        Cart cart = HttpSessionUtils.getCartFromSession(session);
+        cart.delete(cartProduct);
+        log.debug("CartList : {}", cart);
+        return ResponseEntity.ok().build();
     }
 }

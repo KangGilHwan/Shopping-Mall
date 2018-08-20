@@ -29,3 +29,6 @@ nbdist/
 
 ### Upload Images ###
 item/
+
+### log ###
+.log

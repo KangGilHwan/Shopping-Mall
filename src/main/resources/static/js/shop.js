@@ -3,6 +3,7 @@ $("#product-form").on("click", "#product-btn", product);
 $(document).on("click", "#login-btn", login);
 $(document).on("click", "#logoutBtn", logout);
 $(document).on("click", "#cartBtn", addCart);
+$(document).on("click", "#delete-cart", deleteCart);
 
 function signUp(e){
 e.preventDefault();
@@ -162,6 +163,49 @@ var totalPrice = data.totalPrice;
 console.log("status :" + status);
 document.getElementById('totalPrice').innerHTML="Total: $" + totalPrice;
 //location.href = "/products";
+},
+error : function (xhr, status){
+alert("error");
+}
+});
+};
+
+function deleteCart(e){
+console.log("Delete");
+e.preventDefault();
+var deleteBtn = $(this);
+var url = document.getElementById('delete-cart').getAttribute('href');
+var size = $("#cart-size").val();
+var amount = $("#cart-amount").val();
+var price = $("#cart-product-price").val();
+var totalPrice = $("#totalPriceValue").val();
+console.log("url :" + url);
+console.log("size :" + size);
+console.log("amount :" + amount);
+
+var option = {
+size : size,
+amount : amount
+};
+
+console.log("option :" + option);
+
+$.ajax({
+type : 'delete',
+url : url,
+data : JSON.stringify(option),
+contentType : "application/json",
+success : function(data, status){
+$(deleteBtn).closest("li").remove();
+//var totalPrice = $("#totalPriceValue").val();
+var totalPriceValue = parseInt(totalPrice);
+var priceValue = parseInt(price);
+var amountValue = parseInt(amount);
+console.log("price :" + price);
+console.log("amount :" + amountValue);
+totalPriceValue = totalPriceValue - priceValue;
+console.log("totalPrice :" + totalPriceValue);
+document.getElementById('totalPrice').innerHTML="Total: $" + totalPriceValue;
 },
 error : function (xhr, status){
 alert("error");

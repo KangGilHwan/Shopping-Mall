@@ -7,11 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +21,6 @@ import riverway.service.UserService;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.Optional;
 
 @Controller
@@ -36,18 +32,29 @@ public class KakaoController {
     @Value("${kakao.client.id}")
     private String CLIENT_ID;
 
+    @Value("${kakao.redirect.uri}")
+    private String REDIRECT_URI;
+
+    @Value("${kakao.token}")
+    private String TOKEN_URI;
+
+    @Value("${kakao.user.info}")
+    private String USER_INFO_URI;
+
+    @Autowired
+    private RestTemplate restTemplate;
+
     @Autowired
     private UserService userService;
 
-    private RestTemplate restTemplate = new RestTemplate();
 
     @GetMapping("/oauth")
-    public String accessCode(String code, Model model, HttpSession session) throws Exception {
+    public String kakaoLogin(String code, Model model, HttpSession session) throws Exception {
         log.debug("code : {}", code);
         KakaoDto response = getAccessToken(code);
         JsonNode userInfo = getUserInfo(response.getAccess_token());
-        log.debug("UserInfoId : {}", userInfo.get("id"));
         Optional<User> maybeUser = userService.loginKakao(userInfo.get("id").asLong());
+        log.debug("UserInfoId : {}", userInfo.get("id"));
         log.debug("KakaoOauthDto : {}", response);
         if (!maybeUser.isPresent()) {
             UserDto userDto = UserDto.build()
@@ -60,39 +67,29 @@ public class KakaoController {
     }
 
     private KakaoDto getAccessToken(String code) {
-        HttpHeaders headers = new HttpHeaders();
-        headers.setAccept(Arrays.asList(MediaType.TEXT_HTML, MediaType.APPLICATION_JSON));
-        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+        HttpEntity<MultiValueMap<String, Object>> request = HtmlFormDataBuilder.urlEncodeFormJSON()
+                .addParameter("grant_type", "authorization_code")
+                .addParameter("client_id", CLIENT_ID)
+                .addParameter("redirect_uri", REDIRECT_URI)
+                .addParameter("code", code)
+                .build();
 
-        MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
-        params.add("grant_type", "authorization_code");
-        params.add("client_id", CLIENT_ID);
-        params.add("redirect_uri", "http://localhost:8060/api/kakao/oauth");
-        params.add("code", code);
-
-        HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<>(params, headers);
-        KakaoDto response = restTemplate.postForObject("https://kauth.kakao.com/oauth/token",
-                request, KakaoDto.class);
+        KakaoDto response = restTemplate.postForObject(TOKEN_URI, request, KakaoDto.class);
         return response;
     }
 
     private JsonNode getUserInfo(String accessToken) throws IOException {
         log.debug("accessToken : {}", accessToken);
-        HttpHeaders headers = new HttpHeaders();
-        headers.setAccept(Arrays.asList(MediaType.TEXT_HTML, MediaType.APPLICATION_JSON));
-        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
-        headers.set("Authorization", "Bearer " + accessToken);
+        HttpEntity<MultiValueMap<String, Object>> request = HtmlFormDataBuilder.urlEncodeFormJSON()
+                .setHeader("Authorization", "Bearer " + accessToken)
+                .build();
 
-        MultiValueMap<String, Object> params = new LinkedMultiValueMap<>();
-
-        HttpEntity<MultiValueMap<String, Object>> request = new HttpEntity<>(params, headers);
+        String response = restTemplate.postForObject(USER_INFO_URI, request, String.class);
         log.debug("request : {}", request);
-        String response = restTemplate.postForObject("https://kapi.kakao.com/v2/user/me", request, String.class);
         log.debug("response : {}", response);
 
-        JsonNode userInfo = null;
         ObjectMapper mapper = new ObjectMapper();
-        userInfo = mapper.readTree(response);
+        JsonNode userInfo = mapper.readTree(response);
         log.debug("UserInfo : {}", userInfo);
         return userInfo;
     }

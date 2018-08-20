@@ -19,7 +19,6 @@ public class KakaoDto {
     public KakaoDto() {
     }
 
-
     public String getAccess_token() {
         return access_token;
     }
@@ -70,24 +69,6 @@ public class KakaoDto {
 
     public String makeAuthorization() {
         return token_type + " " + access_token;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        KakaoDto kakaoDto = (KakaoDto) o;
-        return Objects.equals(access_token, kakaoDto.access_token) &&
-                Objects.equals(token_type, kakaoDto.token_type) &&
-                Objects.equals(refresh_token, kakaoDto.refresh_token) &&
-                Objects.equals(expires_in, kakaoDto.expires_in) &&
-                Objects.equals(scope, kakaoDto.scope) &&
-                Objects.equals(refresh_token_expires_in, kakaoDto.refresh_token_expires_in);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(access_token, token_type, refresh_token, expires_in, scope, refresh_token_expires_in);
     }
 
     @Override

@@ -33,6 +33,9 @@
                 {{#cart}}
                 {{#cartProducts}}
                 <li class="header-cart-product flex-w flex-t m-b-12">
+                    <input id="cart-size" type="hidden" name="size" value="{{option.size}}">
+                    <input id="cart-amount" type="hidden" name="amount" value="{{option.amount}}">
+                    <input id="cart-product-price" type="hidden" name="price" value="{{price}}">
                     <div class="header-cart-product-img">
                         {{#product.images}}
                         <img src="{{path}}" style='max-height: 80px; max-width: 60px; object-fit: contain'/>
@@ -47,6 +50,7 @@
                         <span class="header-cart-product-info">
 								{{option.amount}} x ${{product.price}}
 							</span>
+                        <a href="/api/products/{{product.id}}/cart" id="delete-cart">x</a>
                     </div>
                 </li>
                 {{/cartProducts}}
@@ -56,14 +60,15 @@
 
             <div class="w-full">
                 <div class="header-cart-total w-full p-tb-40" id="totalPrice">
+                    <input type="hidden" id="totalPriceValue" value={{cart.totalPrice}}>
                     Total: ${{cart.totalPrice}}
                 </div>
                 <div class="header-cart-buttons flex-w w-full">
-                    <a href="/shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
+                    <a href="/cart" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
                         View Cart
                     </a>
 
-                    <a href="/shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
+                    <a href="/cart" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
                         Check Out
                     </a>
                 </div>

@@ -27,6 +27,12 @@ public class Cart {
         cartProducts.add(newItem);
     }
 
+    public void delete(CartProduct target) {
+        log.debug("Before cart Size : {}", cartProducts.size());
+        cartProducts.remove(target);
+        log.debug("After cart Size : {}", cartProducts.size());
+    }
+
     public int getTotalPrice() {
         return cartProducts.stream()
                 .mapToInt(CartProduct::getPrice)

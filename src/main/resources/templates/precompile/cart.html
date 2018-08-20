@@ -1,6 +1,9 @@
 <ul class="header-cart-wrapitem w-full" id="cartList">
 {{#products}}
 <li class="header-cart-product flex-w flex-t m-b-12">
+    <input id="cart-size" type="hidden" name="size" value="{{option.size}}">
+    <input id="cart-amount" type="hidden" name="amount" value="{{option.amount}}">
+    <input id="cart-product-price" type="hidden" name="price" value="{{price}}">
     <div class="header-cart-product-img">
         {{#product.images}}
         <img src="{{path}}" style='max-height: 80px; max-width: 60px; object-fit: contain'/>
@@ -15,6 +18,7 @@
         <div class="header-cart-product-info">
             {{option.size}} Size {{option.amount}} x ${{product.price}}
         </div>
+        <a href="/api/products/{{product.id}}/cart" id="delete-cart">x</a>
     </div>
 </li>
 {{/products}}
