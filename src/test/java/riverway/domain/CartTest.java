@@ -53,7 +53,8 @@ public class CartTest {
         CartProduct newItem = new CartProduct(product, option);
 
         cart.addCart(newItem);
-        assertThat(cart.getCartProducts().size(), is(1));
+        assertThat(cart.getSize(), is(1));
+        assertThat(cart.getTotalPrice(), is(20000));
     }
 
     @Test
@@ -66,7 +67,7 @@ public class CartTest {
         CartProduct newItem = new CartProduct(product, option);
 
         cart.addCart(newItem);
-        assertThat(cart.getCartProducts().size(), is(2));
+        assertThat(cart.getSize(), is(2));
     }
 
     @Test

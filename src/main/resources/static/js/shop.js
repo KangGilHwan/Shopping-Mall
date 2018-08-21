@@ -70,8 +70,12 @@ console.log("price : " + $("#product-price").val());
 console.log("file : " + $("#product-file")[0].files[0]);
 console.log("description : " + $("#product-description").val());
 var formData = new FormData();
+var category = document.getElementById('category_select');
+var categoryValue = category[category.selectedIndex].value;
+console.log("category value : " + categoryValue);
 formData.append("name", $("#product-name").val());
 formData.append("price", $("#product-price").val());
+formData.append("category", categoryValue);
 formData.append("image", $("#product-file")[0].files[0]);
 formData.append("description", $("#product-description").val());
 console.log("url : " + url);
@@ -146,8 +150,6 @@ success : function(data, status){
 console.log("data :" + data);
 console.log("data :" + JSON.stringify(data));
 var dataJSON = JSON.stringify(data);
-//var source = $("#cart-template").html();
-//console.log("source : " + source);
 
 var temp = Handlebars.templates['precompile/cart'];
 console.log("template : " + temp);
@@ -160,9 +162,9 @@ console.log("Html : " + html);
 $("#cartList").remove();
 $("#cartList-div").prepend(html);
 var totalPrice = data.totalPrice;
+$("#totalPriceValue").val(totalPrice);
 console.log("status :" + status);
 document.getElementById('totalPrice').innerHTML="Total: $" + totalPrice;
-//location.href = "/products";
 },
 error : function (xhr, status){
 alert("error");
@@ -178,7 +180,9 @@ var url = document.getElementById('delete-cart').getAttribute('href');
 var size = $("#cart-size").val();
 var amount = $("#cart-amount").val();
 var price = $("#cart-product-price").val();
-var totalPrice = $("#totalPriceValue").val();
+var total = $("#totalPriceValue").val();
+
+console.log("totalPrice :" + total);
 console.log("url :" + url);
 console.log("size :" + size);
 console.log("amount :" + amount);
@@ -197,10 +201,11 @@ data : JSON.stringify(option),
 contentType : "application/json",
 success : function(data, status){
 $(deleteBtn).closest("li").remove();
-//var totalPrice = $("#totalPriceValue").val();
-var totalPriceValue = parseInt(totalPrice);
+
+var totalPriceValue = parseInt(total);
 var priceValue = parseInt(price);
 var amountValue = parseInt(amount);
+alert("zzz");
 console.log("price :" + price);
 console.log("amount :" + amountValue);
 totalPriceValue = totalPriceValue - priceValue;

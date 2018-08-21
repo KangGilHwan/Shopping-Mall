@@ -27,7 +27,7 @@ public class ApiUserAcceptanceTest extends AcceptanceTest {
         UserDto dbUser = template.getForObject(location, UserDto.class);
         log.debug("Saved User : {}", dbUser);
         assertThat(signUpUser, is(dbUser));
-        assertThat(dbUser.getRole(), is(Role.CONSUMER));
+        assertThat(dbUser.getRole(), is(Role.ROLE_USER));
     }
 
     public UserDto creatConsumer(String username) {

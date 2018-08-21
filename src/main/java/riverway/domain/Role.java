@@ -5,8 +5,8 @@ import java.util.List;
 
 public enum Role {
 
-    SELLER(Arrays.asList("ROLE_ADMIN", "ROLE_USER")),
-    CONSUMER(Arrays.asList("ROLE_USER"));
+    ROLE_ADMIN(Arrays.asList("SELLER", "CONSUMER")),
+    ROLE_USER(Arrays.asList("CONSUMER"));
 
     private List<String> roleName;
 
@@ -14,7 +14,7 @@ public enum Role {
         this.roleName = roleName;
     }
 
-    public static boolean hasAdmin(Role role){
-        return role.roleName.stream().anyMatch(r-> r.equals("ROLE_ADMIN"));
+    public static boolean hasSeller(Role role){
+        return role.roleName.stream().anyMatch(r-> r.equals("SELLER"));
     }
 }

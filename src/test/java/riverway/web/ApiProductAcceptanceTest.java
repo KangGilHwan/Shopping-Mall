@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.util.MultiValueMap;
 import riverway.dto.ProductDto;
 import support.test.AcceptanceTest;
-import support.test.HtmlFormDataBuilder;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;

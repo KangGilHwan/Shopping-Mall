@@ -30,7 +30,7 @@ public class User {
     @Enumerated(EnumType.STRING)
     private SocialCode socialCode;
 
-    @Column(columnDefinition = "varchar(30) default 'CONSUMER'")
+    @Column(columnDefinition = "varchar(30) default 'ROLE_USER'")
     @Enumerated(EnumType.STRING)
     private Role role;
 
@@ -61,7 +61,7 @@ public class User {
     }
 
     public boolean isSeller() {
-        return Role.hasAdmin(role);
+        return Role.hasSeller(role);
     }
 
     public Long getId() {

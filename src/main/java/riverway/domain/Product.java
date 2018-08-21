@@ -4,6 +4,7 @@ import riverway.dto.ProductDto;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -20,6 +21,10 @@ public class Product {
     @Column(nullable = false)
     private Integer price;
 
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Category category;
+
     @Lob
     private String description;
 
@@ -33,10 +38,11 @@ public class Product {
     public Product() {
     }
 
-    public Product(String name, Integer price, String description, User seller) {
+    public Product(String name, Integer price, String description, Category category, User seller) {
         this.name = name;
         this.price = price;
         this.description = description;
+        this.category = category;
         this.seller = seller;
     }
 
@@ -45,6 +51,7 @@ public class Product {
                 .setId(id)
                 .setName(name)
                 .setPrice(price)
+                .setCategory(category)
                 .setDescription(description)
                 .setSeller(seller)
                 .setImages(images);
@@ -62,6 +69,10 @@ public class Product {
         return price;
     }
 
+    public Category getCategory() {
+        return category;
+    }
+
     public String getDescription() {
         return description;
     }
@@ -71,7 +82,7 @@ public class Product {
     }
 
     public List<Attachment> getImages() {
-        return images;
+        return Collections.unmodifiableList(images);
     }
 
     @Override
