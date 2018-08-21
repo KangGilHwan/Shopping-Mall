@@ -4,8 +4,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
+import java.util.Optional;
 
 public class Cart {
 
@@ -17,20 +18,30 @@ public class Cart {
     }
 
     public void addCart(CartProduct newItem) {
-        for (CartProduct product : cartProducts) {
-            if (product.equals(newItem)) {
-                log.debug("제품과 사이즈가 같은 경우");
-                product.addAmount(newItem);
-                return;
-            }
+        Optional<CartProduct> maybeItem = findSameItem(newItem);
+        if (maybeItem.isPresent()) {
+            log.debug("제품과 사이즈가 같은 경우");
+            CartProduct cartProduct = maybeItem.get();
+            cartProduct.addAmount(newItem);
+            return;
         }
         cartProducts.add(newItem);
+    }
+
+    private Optional<CartProduct> findSameItem(CartProduct newItem) {
+        return cartProducts.stream()
+                .filter(p -> p.equals(newItem))
+                .findFirst();
     }
 
     public void delete(CartProduct target) {
         log.debug("Before cart Size : {}", cartProducts.size());
         cartProducts.remove(target);
         log.debug("After cart Size : {}", cartProducts.size());
+    }
+
+    public int getSize() {
+        return cartProducts.size();
     }
 
     public int getTotalPrice() {
@@ -40,7 +51,7 @@ public class Cart {
     }
 
     public List<CartProduct> getCartProducts() {
-        return cartProducts;
+        return Collections.unmodifiableList(cartProducts);
     }
 
     @Override

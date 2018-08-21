@@ -45,6 +45,9 @@ public class KakaoController {
     private RestTemplate restTemplate;
 
     @Autowired
+    private ObjectMapper mapper;
+
+    @Autowired
     private UserService userService;
 
 
@@ -88,7 +91,6 @@ public class KakaoController {
         log.debug("request : {}", request);
         log.debug("response : {}", response);
 
-        ObjectMapper mapper = new ObjectMapper();
         JsonNode userInfo = mapper.readTree(response);
         log.debug("UserInfo : {}", userInfo);
         return userInfo;

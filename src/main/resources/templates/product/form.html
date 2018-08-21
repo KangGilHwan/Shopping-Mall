@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Product</title>
-	{{>partial/head}}
+    <title>Product</title>
+    {{>partial/head}}
 </head>
 <body class="animsition">
 
@@ -14,107 +14,129 @@
 
 <!-- Title page -->
 <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('/images/bg-01.jpg');">
-	<h2 class="ltext-105 cl0 txt-center">
-		Product
-	</h2>
+    <h2 class="ltext-105 cl0 txt-center">
+        Product
+    </h2>
 </section>
 
 
 <!-- Content page -->
 <section class="bg0 p-t-104 p-b-116">
-	<div class="container">
-		<div class="flex-w flex-tr">
-			<div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
-				<form id="product-form" action="/api/products" method="post" enctype="multipart/form-data">
-					<h4 class="mtext-105 cl2 txt-center p-b-30">
-						제품 등록
-					</h4>
+    <div class="container">
+        <div class="flex-w flex-tr">
+            <div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
+                <form id="product-form" action="/api/products" method="post" enctype="multipart/form-data">
+                    <h4 class="mtext-105 cl2 txt-center p-b-30">
+                        제품 등록
+                    </h4>
 
-					<div class="bor8 m-b-20 how-pos4-parent">
-						<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" id="product-name" type="text"
-							   name="name"
-							   placeholder="Your Product Name">
-					</div>
+                    <div class="bor8 m-b-20 how-pos4-parent">
+                        <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" id="product-name" type="text"
+                               name="name"
+                               placeholder="Your Product Name">
+                    </div>
 
-                    <input type="file" name="image" id="product-file"/>
+                    <input type="file" name="image" id="product-file"/> </br>
 
-					<div class="bor8 m-b-30">
-						<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" id="product-price" type="number"
-							   name="price"
-							   placeholder="Price">
-					</div>
+                    <div class="bor8 m-b-30">
+                        <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" id="product-price" type="number"
+                               name="price"
+                               placeholder="Price">
+                    </div>
 
-					<div class="bor8 m-b-30">
-						<textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25" id="product-description" name="description" placeholder="What is this?"></textarea>
-					</div>
+                    <div class="flex-w flex-r-m p-b-10">
+                        <div class="size-203 flex-c-m respon6">
+                            Category
+                        </div>
+
+                        <div class="size-204 respon6-next">
+                            <div class="rs1-select2 bor8 bg0">
+                                <select class="js-select2" id="category_select" name="time">
+                                    <option>Choose an option</option>
+                                    <option value="MEN">Men</option>
+                                    <option value="WOMEN">Women</option>
+                                    <option value="BAG">Bag</option>
+                                    <option value="SHOES">Shoes</option>
+                                    <option value="ACCESSORIES">Accessories</option>
+                                </select>
+                                <div class="dropDownSelect2"></div>
+                            </div>
+                        </div>
+                    </div>
 
 
-					<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer"
-							id="product-btn">
-						등록하기
-					</button>
-					<br/>
-				</form>
-			</div>
+                    <div class="bor8 m-b-30">
+                        <textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25" id="product-description"
+                                  name="description" placeholder="What is this?"></textarea>
+                    </div>
 
-			<div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">
-				<div class="flex-w w-full p-b-42">
+
+                    <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer"
+                            id="product-btn">
+                        등록하기
+                    </button>
+                    <br/>
+                </form>
+            </div>
+
+            <div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">
+                <div class="flex-w w-full p-b-42">
 						<span class="fs-18 cl5 txt-center size-211">
 							<span class="lnr lnr-map-marker"></span>
 						</span>
 
-					<div class="size-212 p-t-2">
+                    <div class="size-212 p-t-2">
 							<span class="mtext-110 cl2">
 								Address
 							</span>
 
-						<p class="stext-115 cl6 size-213 p-t-18">
-							Coza Store Center 8th floor, 379 Hudson St, New York, NY 10018 US
-						</p>
-					</div>
-				</div>
+                        <p class="stext-115 cl6 size-213 p-t-18">
+                            Coza Store Center 8th floor, 379 Hudson St, New York, NY 10018 US
+                        </p>
+                    </div>
+                </div>
 
-				<div class="flex-w w-full p-b-42">
+                <div class="flex-w w-full p-b-42">
 						<span class="fs-18 cl5 txt-center size-211">
 							<span class="lnr lnr-phone-handset"></span>
 						</span>
 
-					<div class="size-212 p-t-2">
+                    <div class="size-212 p-t-2">
 							<span class="mtext-110 cl2">
 								Lets Talk
 							</span>
 
-						<p class="stext-115 cl1 size-213 p-t-18">
-							+1 800 1236879
-						</p>
-					</div>
-				</div>
+                        <p class="stext-115 cl1 size-213 p-t-18">
+                            +1 800 1236879
+                        </p>
+                    </div>
+                </div>
 
-				<div class="flex-w w-full">
+                <div class="flex-w w-full">
 						<span class="fs-18 cl5 txt-center size-211">
 							<span class="lnr lnr-envelope"></span>
 						</span>
 
-					<div class="size-212 p-t-2">
+                    <div class="size-212 p-t-2">
 							<span class="mtext-110 cl2">
 								Sale Support
 							</span>
 
-						<p class="stext-115 cl1 size-213 p-t-18">
-							contact@example.com
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                        <p class="stext-115 cl1 size-213 p-t-18">
+                            contact@example.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 
 <!-- Map -->
 <div class="map">
-	<div class="size-303" id="google_map" data-map-x="40.691446" data-map-y="-73.886787"
-		 data-pin="/images/icons/pin.png" data-scrollwhell="0" data-draggable="1" data-zoom="11"></div>
+    <div class="size-303" id="google_map" data-map-x="40.691446" data-map-y="-73.886787"
+         data-pin="/images/icons/pin.png" data-scrollwhell="0" data-draggable="1" data-zoom="11"></div>
 </div>
 
 

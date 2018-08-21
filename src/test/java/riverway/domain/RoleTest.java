@@ -11,11 +11,11 @@ public class RoleTest {
 
     @Test
     public void hasAdmin_consumer(){
-        assertFalse(Role.hasAdmin(Role.CONSUMER));
+        assertFalse(Role.hasSeller(Role.ROLE_USER));
     }
 
     @Test
     public void hasAdmin_seller(){
-        assertTrue(Role.hasAdmin(Role.SELLER));
+        assertTrue(Role.hasSeller(Role.ROLE_ADMIN));
     }
 }

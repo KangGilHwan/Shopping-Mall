@@ -1,13 +1,9 @@
 package riverway.domain;
 
-import com.sun.jndi.toolkit.url.Uri;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 import java.io.File;
-import java.net.URI;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.UUID;
 
 @Entity
@@ -48,12 +44,12 @@ public class Attachment {
         return savedName;
     }
 
-    public File save(){
+    public File save() {
         return new File(path + File.separator + savedName);
     }
 
     public String getPath() {
-    return String.format("/images/item/%s", savedName.trim());
+        return String.format("/images/item/%s", savedName.trim());
     }
 
     public static Attachment of(String path, Product product, MultipartFile file) {

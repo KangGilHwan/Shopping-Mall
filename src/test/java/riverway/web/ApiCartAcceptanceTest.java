@@ -8,9 +8,7 @@ import org.springframework.http.*;
 import org.springframework.util.MultiValueMap;
 import riverway.domain.cart.Option;
 import riverway.domain.cart.Size;
-import riverway.dto.ProductDto;
 import support.test.AcceptanceTest;
-import support.test.HtmlFormDataBuilder;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;

@@ -1,6 +1,7 @@
 package riverway.dto;
 
 import riverway.domain.Attachment;
+import riverway.domain.Category;
 import riverway.domain.Product;
 import riverway.domain.User;
 
@@ -16,6 +17,8 @@ public class ProductDto {
     private String name;
     @Size(min = 4)
     private Integer price;
+
+    private Category category;
 
     private String description;
 
@@ -37,7 +40,7 @@ public class ProductDto {
     }
 
     public Product toProduct() {
-        return new Product(name, price, description, seller);
+        return new Product(name, price, description, category, seller);
     }
 
     public Long getId() {
@@ -64,6 +67,15 @@ public class ProductDto {
 
     public ProductDto setPrice(Integer price) {
         this.price = price;
+        return this;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public ProductDto setCategory(Category category) {
+        this.category = category;
         return this;
     }
 

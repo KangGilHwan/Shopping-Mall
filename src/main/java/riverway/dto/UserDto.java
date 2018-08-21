@@ -31,7 +31,7 @@ public class UserDto {
     }
 
     public User toConsumer() {
-        return new User(username, password, email, phoneNumber, socialId, socialCode, Role.CONSUMER);
+        return new User(username, password, email, phoneNumber, socialId, socialCode, Role.ROLE_USER);
     }
 
     public User toUser() {
