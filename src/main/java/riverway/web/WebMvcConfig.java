@@ -55,7 +55,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(basicAuthInterceptor());
-        registry.addInterceptor(userRoleInterceptor()).addPathPatterns("/api/products", "/products/form");
+        registry.addInterceptor(userRoleInterceptor()).addPathPatterns("/api/products", "/products/form", "/api/coupons/**");
     }
 
     @Override

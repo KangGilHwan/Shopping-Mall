@@ -4,6 +4,7 @@ $(document).on("click", "#login-btn", login);
 $(document).on("click", "#logoutBtn", logout);
 $(document).on("click", "#cartBtn", addCart);
 $(document).on("click", "#delete-cart", deleteCart);
+$(document).on("click", "#orderBtn", order);
 
 function signUp(e){
 e.preventDefault();
@@ -216,4 +217,25 @@ error : function (xhr, status){
 alert("error");
 }
 });
+};
+
+function order(e){
+e.preventDefault();
+//table-shopping-cart
+var hey = document.getElementById('table-shopping-cart');
+console.log("table : " + hey);
+console.log("queryString : " + JSON.stringify(hey));
+//$.ajax({
+//type : 'post',
+//url : url,
+//contentType : "application/json",
+//data : JSON.stringify(data),
+//error : function (xhr, status){
+//alert("error");
+//},
+//success : function(data, status){
+//console.log("success : " + data);
+//location.href = "/";
+//}
+//});
 };

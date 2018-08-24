@@ -1,0 +1,406 @@
+2018-08-23 18:09:02.387 INFO [riverway.ShoppingApplication.logStarting:50] - Starting ShoppingApplication on DESKTOP-JDTM7B1 with PID 21092 (C:\Users\Kang\shop\out\production\classes started by Kang in C:\Users\Kang\shop) 
+2018-08-23 18:09:02.418 DEBUG [riverway.ShoppingApplication.logStarting:53] - Running with Spring Boot v2.0.2.RELEASE, Spring v5.0.6.RELEASE 
+2018-08-23 18:09:02.421 INFO [riverway.ShoppingApplication.logStartupProfileInfo:659] - No active profile set, falling back to default profiles: default 
+2018-08-23 18:09:12.605 INFO [riverway.ShoppingApplication.logStarting:50] - Starting ShoppingApplication on DESKTOP-JDTM7B1 with PID 27864 (C:\Users\Kang\shop\out\production\classes started by Kang in C:\Users\Kang\shop) 
+2018-08-23 18:09:12.614 DEBUG [riverway.ShoppingApplication.logStarting:53] - Running with Spring Boot v2.0.2.RELEASE, Spring v5.0.6.RELEASE 
+2018-08-23 18:09:12.618 INFO [riverway.ShoppingApplication.logStartupProfileInfo:659] - No active profile set, falling back to default profiles: default 
+2018-08-23 18:13:17.421 INFO [riverway.ShoppingApplication.logStarting:50] - Starting ShoppingApplication on DESKTOP-JDTM7B1 with PID 18088 (C:\Users\Kang\shop\out\production\classes started by Kang in C:\Users\Kang\shop) 
+2018-08-23 18:13:17.431 DEBUG [riverway.ShoppingApplication.logStarting:53] - Running with Spring Boot v2.0.2.RELEASE, Spring v5.0.6.RELEASE 
+2018-08-23 18:13:17.435 INFO [riverway.ShoppingApplication.logStartupProfileInfo:659] - No active profile set, falling back to default profiles: default 
+2018-08-23 18:13:30.854 INFO [riverway.ShoppingApplication.logStarted:59] - Started ShoppingApplication in 14.754 seconds (JVM running for 16.388) 
+2018-08-23 18:13:58.151 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.014 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.023 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.024 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.024 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.026 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.028 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.258 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.293 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.343 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.363 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.382 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.401 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.425 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.468 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.493 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.511 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.558 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.643 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.644 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.671 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.693 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.896 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.908 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.923 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.919 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.934 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.956 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.969 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:00.989 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:01.005 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:01.011 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:01.061 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:01.086 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:01.110 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:01.133 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:01.138 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:01.164 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:01.209 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:01.222 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.016 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.018 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.024 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.026 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.027 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.040 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.065 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.073 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.113 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.130 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.132 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.140 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.145 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.148 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.166 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.177 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.190 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.193 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.228 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.612 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.620 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.633 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.646 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.667 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.694 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.706 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.718 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.688 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.753 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.757 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.757 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.771 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.776 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.797 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.805 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.808 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.823 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.836 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.925 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.933 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.938 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.942 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:02.942 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:03.069 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:09.240 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:09.550 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:09.550 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:09.563 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:40.297 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:40.316 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:14:40.396 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:15:10.263 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:15:11.400 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:15:11.401 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:15:11.405 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:15:11.411 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:15:11.519 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:15:12.169 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:15:12.173 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:15:14.889 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:15:14.909 DEBUG [riverway.web.ProductController.showDetail:35] - Here ! 
+2018-08-23 18:15:15.238 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:15:16.036 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:15:16.040 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:15:21.083 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:15:21.241 DEBUG [riverway.web.ApiCartController.addCart:27] - Option : Option{size=S, amount=2} 
+2018-08-23 18:15:21.255 DEBUG [riverway.web.ApiCartController.addCart:32] - CartProduct : CartProduct{product=Product{id=3, name='Vintage Inspired Classic', price=93, description='Watch', seller=User{id=1, username='river', password='$2a$10$v0n.ICi8CSDPrwUjZqSsSu0B18.epFOyeH12g3Ko7.gWmy.95nLAa', email='river@test.com', phoneNumber='01012345678', socialId=null, role=ROLE_ADMIN, socialCode=null}}, option=Option{size=S, amount=2}} 
+2018-08-23 18:15:21.256 DEBUG [riverway.web.ApiCartController.addCart:33] - CartList : Cart{cartProducts=[CartProduct{product=Product{id=3, name='Vintage Inspired Classic', price=93, description='Watch', seller=User{id=1, username='river', password='$2a$10$v0n.ICi8CSDPrwUjZqSsSu0B18.epFOyeH12g3Ko7.gWmy.95nLAa', email='river@test.com', phoneNumber='01012345678', socialId=null, role=ROLE_ADMIN, socialCode=null}}, option=Option{size=S, amount=2}}]} 
+2018-08-23 18:15:25.575 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:15:25.702 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:15:26.373 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:15:26.377 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:15:43.760 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:15:44.386 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:15:44.397 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:16:03.268 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:16:03.656 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:16:04.067 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 18:16:04.072 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:48:17.983 INFO [riverway.ShoppingApplication.logStarting:50] - Starting ShoppingApplication on DESKTOP-JDTM7B1 with PID 17372 (C:\Users\Kang\shop\out\production\classes started by Kang in C:\Users\Kang\shop) 
+2018-08-23 19:48:17.989 DEBUG [riverway.ShoppingApplication.logStarting:53] - Running with Spring Boot v2.0.2.RELEASE, Spring v5.0.6.RELEASE 
+2018-08-23 19:48:17.991 INFO [riverway.ShoppingApplication.logStartupProfileInfo:659] - No active profile set, falling back to default profiles: default 
+2018-08-23 19:48:34.566 INFO [riverway.ShoppingApplication.logStarted:59] - Started ShoppingApplication in 18.37 seconds (JVM running for 20.62) 
+2018-08-23 19:49:42.689 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:47.340 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:47.364 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:47.692 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:49.648 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:50.253 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:50.296 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:50.311 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:50.318 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:50.325 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:50.514 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:50.537 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:50.726 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:50.739 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:50.803 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:50.891 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:50.908 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:50.912 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:50.953 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.044 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.052 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.096 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.101 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.142 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.160 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.649 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.651 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.662 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.689 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.690 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.703 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.756 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.811 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.815 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.836 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.846 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.817 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.871 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.891 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.896 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.909 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.934 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.984 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:51.985 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.124 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.129 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.135 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.137 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.173 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.192 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.200 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.220 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.231 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.243 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.325 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.415 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.442 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.451 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.507 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.533 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.535 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.538 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.541 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.571 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.575 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.571 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.577 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.603 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.604 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.617 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.635 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.643 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.650 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.666 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.675 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.691 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.700 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.751 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.766 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.774 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.803 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.804 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.896 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.906 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.903 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:52.908 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:53.022 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:53.025 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:53.022 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:55.685 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:58.026 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:49:58.035 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:50:47.996 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:50:48.013 DEBUG [riverway.web.ProductController.showDetail:35] - Here ! 
+2018-08-23 19:50:48.960 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:50:49.554 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:50:49.560 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:50:54.638 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:50:54.851 DEBUG [riverway.web.ApiCartController.addCart:27] - Option : Option{size=M, amount=2} 
+2018-08-23 19:50:54.860 DEBUG [riverway.web.ApiCartController.addCart:32] - CartProduct : CartProduct{product=Product{id=4, name='Pieces Metallic Printed', price=19, description='Tee', seller=User{id=1, username='river', password='$2a$10$v0n.ICi8CSDPrwUjZqSsSu0B18.epFOyeH12g3Ko7.gWmy.95nLAa', email='river@test.com', phoneNumber='01012345678', socialId=null, role=ROLE_ADMIN, socialCode=null}}, option=Option{size=M, amount=2}} 
+2018-08-23 19:50:54.861 DEBUG [riverway.web.ApiCartController.addCart:33] - CartList : Cart{cartProducts=[CartProduct{product=Product{id=4, name='Pieces Metallic Printed', price=19, description='Tee', seller=User{id=1, username='river', password='$2a$10$v0n.ICi8CSDPrwUjZqSsSu0B18.epFOyeH12g3Ko7.gWmy.95nLAa', email='river@test.com', phoneNumber='01012345678', socialId=null, role=ROLE_ADMIN, socialCode=null}}, option=Option{size=M, amount=2}}]} 
+2018-08-23 19:51:01.371 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:51:02.322 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:51:02.328 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:52:57.057 INFO [riverway.ShoppingApplication.logStarting:50] - Starting ShoppingApplication on DESKTOP-JDTM7B1 with PID 6456 (C:\Users\Kang\shop\out\production\classes started by Kang in C:\Users\Kang\shop) 
+2018-08-23 19:52:57.074 DEBUG [riverway.ShoppingApplication.logStarting:53] - Running with Spring Boot v2.0.2.RELEASE, Spring v5.0.6.RELEASE 
+2018-08-23 19:52:57.077 INFO [riverway.ShoppingApplication.logStartupProfileInfo:659] - No active profile set, falling back to default profiles: default 
+2018-08-23 19:53:12.460 INFO [riverway.ShoppingApplication.logStarted:59] - Started ShoppingApplication in 16.802 seconds (JVM running for 19.453) 
+2018-08-23 19:53:36.561 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:53:39.546 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:53:39.775 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:53:39.801 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:53:45.724 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:53:47.713 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:53:47.718 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:53:51.929 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:53:51.949 DEBUG [riverway.web.ProductController.showDetail:35] - Here ! 
+2018-08-23 19:53:53.230 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:53:53.236 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:53:59.056 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:53:59.254 DEBUG [riverway.web.ApiCartController.addCart:27] - Option : Option{size=XL, amount=2} 
+2018-08-23 19:53:59.276 DEBUG [riverway.web.ApiCartController.addCart:32] - CartProduct : CartProduct{product=Product{id=3, name='Vintage Inspired Classic', price=93, description='Watch', seller=User{id=1, username='river', password='$2a$10$v0n.ICi8CSDPrwUjZqSsSu0B18.epFOyeH12g3Ko7.gWmy.95nLAa', email='river@test.com', phoneNumber='01012345678', socialId=null, role=ROLE_ADMIN, socialCode=null}}, option=Option{size=XL, amount=2}} 
+2018-08-23 19:53:59.277 DEBUG [riverway.web.ApiCartController.addCart:33] - CartList : Cart{cartProducts=[CartProduct{product=Product{id=3, name='Vintage Inspired Classic', price=93, description='Watch', seller=User{id=1, username='river', password='$2a$10$v0n.ICi8CSDPrwUjZqSsSu0B18.epFOyeH12g3Ko7.gWmy.95nLAa', email='river@test.com', phoneNumber='01012345678', socialId=null, role=ROLE_ADMIN, socialCode=null}}, option=Option{size=XL, amount=2}}]} 
+2018-08-23 19:54:02.539 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:54:03.522 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 19:54:03.532 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:08:28.140 INFO [riverway.ShoppingApplication.logStarting:50] - Starting ShoppingApplication on DESKTOP-JDTM7B1 with PID 19352 (C:\Users\Kang\shop\out\production\classes started by Kang in C:\Users\Kang\shop) 
+2018-08-23 20:08:28.145 DEBUG [riverway.ShoppingApplication.logStarting:53] - Running with Spring Boot v2.0.2.RELEASE, Spring v5.0.6.RELEASE 
+2018-08-23 20:08:28.149 INFO [riverway.ShoppingApplication.logStartupProfileInfo:659] - No active profile set, falling back to default profiles: default 
+2018-08-23 20:08:45.469 INFO [riverway.ShoppingApplication.logStarted:59] - Started ShoppingApplication in 18.214 seconds (JVM running for 19.874) 
+2018-08-23 20:08:47.099 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:08:49.151 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:08:49.410 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:08:49.431 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:08:55.812 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:08:57.463 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:08:57.473 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:09:00.168 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:09:00.185 DEBUG [riverway.web.ProductController.showDetail:35] - Here ! 
+2018-08-23 20:09:01.102 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:09:01.107 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:09:05.565 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:09:05.756 DEBUG [riverway.web.ApiCartController.addCart:27] - Option : Option{size=XL, amount=2} 
+2018-08-23 20:09:05.765 DEBUG [riverway.web.ApiCartController.addCart:32] - CartProduct : CartProduct{product=Product{id=3, name='Vintage Inspired Classic', price=93, description='Watch', seller=User{id=1, username='river', password='$2a$10$v0n.ICi8CSDPrwUjZqSsSu0B18.epFOyeH12g3Ko7.gWmy.95nLAa', email='river@test.com', phoneNumber='01012345678', socialId=null, role=ROLE_ADMIN, socialCode=null}}, option=Option{size=XL, amount=2}} 
+2018-08-23 20:09:05.766 DEBUG [riverway.web.ApiCartController.addCart:33] - CartList : Cart{cartProducts=[CartProduct{product=Product{id=3, name='Vintage Inspired Classic', price=93, description='Watch', seller=User{id=1, username='river', password='$2a$10$v0n.ICi8CSDPrwUjZqSsSu0B18.epFOyeH12g3Ko7.gWmy.95nLAa', email='river@test.com', phoneNumber='01012345678', socialId=null, role=ROLE_ADMIN, socialCode=null}}, option=Option{size=XL, amount=2}}]} 
+2018-08-23 20:09:09.366 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:09:10.169 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:09:10.179 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:10:51.154 INFO [riverway.ShoppingApplication.logStarting:50] - Starting ShoppingApplication on DESKTOP-JDTM7B1 with PID 17852 (C:\Users\Kang\shop\out\production\classes started by Kang in C:\Users\Kang\shop) 
+2018-08-23 20:10:51.161 DEBUG [riverway.ShoppingApplication.logStarting:53] - Running with Spring Boot v2.0.2.RELEASE, Spring v5.0.6.RELEASE 
+2018-08-23 20:10:51.174 INFO [riverway.ShoppingApplication.logStartupProfileInfo:659] - No active profile set, falling back to default profiles: default 
+2018-08-23 20:11:03.802 INFO [riverway.ShoppingApplication.logStarted:59] - Started ShoppingApplication in 14.121 seconds (JVM running for 15.744) 
+2018-08-23 20:16:17.275 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:16:20.239 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:16:20.480 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:16:20.499 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:16:25.335 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:16:25.353 DEBUG [riverway.web.ProductController.showDetail:35] - Here ! 
+2018-08-23 20:16:26.690 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:16:26.695 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:16:31.195 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:16:31.354 DEBUG [riverway.web.ApiCartController.addCart:27] - Option : Option{size=S, amount=3} 
+2018-08-23 20:16:31.362 DEBUG [riverway.web.ApiCartController.addCart:32] - CartProduct : CartProduct{product=Product{id=3, name='Vintage Inspired Classic', price=93, description='Watch', seller=User{id=1, username='river', password='$2a$10$v0n.ICi8CSDPrwUjZqSsSu0B18.epFOyeH12g3Ko7.gWmy.95nLAa', email='river@test.com', phoneNumber='01012345678', socialId=null, role=ROLE_ADMIN, socialCode=null}}, option=Option{size=S, amount=3}} 
+2018-08-23 20:16:31.363 DEBUG [riverway.web.ApiCartController.addCart:33] - CartList : Cart{cartProducts=[CartProduct{product=Product{id=3, name='Vintage Inspired Classic', price=93, description='Watch', seller=User{id=1, username='river', password='$2a$10$v0n.ICi8CSDPrwUjZqSsSu0B18.epFOyeH12g3Ko7.gWmy.95nLAa', email='river@test.com', phoneNumber='01012345678', socialId=null, role=ROLE_ADMIN, socialCode=null}}, option=Option{size=S, amount=3}}]} 
+2018-08-23 20:16:33.187 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:16:34.219 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:16:34.227 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:17:42.314 INFO [riverway.ShoppingApplication.logStarting:50] - Starting ShoppingApplication on DESKTOP-JDTM7B1 with PID 26392 (C:\Users\Kang\shop\out\production\classes started by Kang in C:\Users\Kang\shop) 
+2018-08-23 20:17:42.321 DEBUG [riverway.ShoppingApplication.logStarting:53] - Running with Spring Boot v2.0.2.RELEASE, Spring v5.0.6.RELEASE 
+2018-08-23 20:17:42.328 INFO [riverway.ShoppingApplication.logStartupProfileInfo:659] - No active profile set, falling back to default profiles: default 
+2018-08-23 20:17:58.877 INFO [riverway.ShoppingApplication.logStarted:59] - Started ShoppingApplication in 17.863 seconds (JVM running for 19.915) 
+2018-08-23 20:19:03.523 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:19:03.729 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:19:08.515 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:19:08.567 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:19:12.256 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:19:12.273 DEBUG [riverway.web.ProductController.showDetail:35] - Here ! 
+2018-08-23 20:19:13.460 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:19:13.668 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:19:13.673 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:19:19.963 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:19:20.104 DEBUG [riverway.web.ApiCartController.addCart:27] - Option : Option{size=L, amount=2} 
+2018-08-23 20:19:20.113 DEBUG [riverway.web.ApiCartController.addCart:32] - CartProduct : CartProduct{product=Product{id=3, name='Vintage Inspired Classic', price=93, description='Watch', seller=User{id=1, username='river', password='$2a$10$v0n.ICi8CSDPrwUjZqSsSu0B18.epFOyeH12g3Ko7.gWmy.95nLAa', email='river@test.com', phoneNumber='01012345678', socialId=null, role=ROLE_ADMIN, socialCode=null}}, option=Option{size=L, amount=2}} 
+2018-08-23 20:19:20.113 DEBUG [riverway.web.ApiCartController.addCart:33] - CartList : Cart{cartProducts=[CartProduct{product=Product{id=3, name='Vintage Inspired Classic', price=93, description='Watch', seller=User{id=1, username='river', password='$2a$10$v0n.ICi8CSDPrwUjZqSsSu0B18.epFOyeH12g3Ko7.gWmy.95nLAa', email='river@test.com', phoneNumber='01012345678', socialId=null, role=ROLE_ADMIN, socialCode=null}}, option=Option{size=L, amount=2}}]} 
+2018-08-23 20:19:22.732 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:19:23.628 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:19:23.634 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:20:21.836 INFO [riverway.ShoppingApplication.logStarting:50] - Starting ShoppingApplication on DESKTOP-JDTM7B1 with PID 26212 (C:\Users\Kang\shop\out\production\classes started by Kang in C:\Users\Kang\shop) 
+2018-08-23 20:20:21.843 DEBUG [riverway.ShoppingApplication.logStarting:53] - Running with Spring Boot v2.0.2.RELEASE, Spring v5.0.6.RELEASE 
+2018-08-23 20:20:21.847 INFO [riverway.ShoppingApplication.logStartupProfileInfo:659] - No active profile set, falling back to default profiles: default 
+2018-08-23 20:20:35.396 INFO [riverway.ShoppingApplication.logStarted:59] - Started ShoppingApplication in 14.515 seconds (JVM running for 16.022) 
+2018-08-23 20:20:40.231 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:20:43.407 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:20:43.439 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:20:47.360 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:20:47.377 DEBUG [riverway.web.ProductController.showDetail:35] - Here ! 
+2018-08-23 20:20:49.144 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:20:49.149 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:20:53.710 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:20:53.880 DEBUG [riverway.web.ApiCartController.addCart:27] - Option : Option{size=L, amount=2} 
+2018-08-23 20:20:53.896 DEBUG [riverway.web.ApiCartController.addCart:32] - CartProduct : CartProduct{product=Product{id=3, name='Vintage Inspired Classic', price=93, description='Watch', seller=User{id=1, username='river', password='$2a$10$v0n.ICi8CSDPrwUjZqSsSu0B18.epFOyeH12g3Ko7.gWmy.95nLAa', email='river@test.com', phoneNumber='01012345678', socialId=null, role=ROLE_ADMIN, socialCode=null}}, option=Option{size=L, amount=2}} 
+2018-08-23 20:20:53.897 DEBUG [riverway.web.ApiCartController.addCart:33] - CartList : Cart{cartProducts=[CartProduct{product=Product{id=3, name='Vintage Inspired Classic', price=93, description='Watch', seller=User{id=1, username='river', password='$2a$10$v0n.ICi8CSDPrwUjZqSsSu0B18.epFOyeH12g3Ko7.gWmy.95nLAa', email='river@test.com', phoneNumber='01012345678', socialId=null, role=ROLE_ADMIN, socialCode=null}}, option=Option{size=L, amount=2}}]} 
+2018-08-23 20:20:55.806 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:20:57.056 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:20:57.061 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:14.788 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:14.883 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:14.892 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:14.894 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:14.898 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:14.903 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:14.959 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:14.963 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:14.966 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:14.967 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:14.966 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:15.175 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:15.181 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:15.190 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:15.210 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:15.228 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:15.238 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:15.426 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:15.443 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:15.445 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:15.447 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:15.451 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:15.466 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:15.549 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:15.885 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:15.891 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:15.896 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:15.902 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:15.905 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:15.914 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:15.939 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:15.948 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:15.953 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:15.965 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:16.028 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:16.041 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:16.065 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:16.080 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:16.083 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:16.127 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:16.130 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:16.130 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:16.191 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:16.192 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:16.191 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:16.192 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:16.506 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:21:16.518 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:25:25.323 INFO [riverway.ShoppingApplication.logStarting:50] - Starting ShoppingApplication on DESKTOP-JDTM7B1 with PID 19440 (C:\Users\Kang\shop\out\production\classes started by Kang in C:\Users\Kang\shop) 
+2018-08-23 20:25:25.334 DEBUG [riverway.ShoppingApplication.logStarting:53] - Running with Spring Boot v2.0.2.RELEASE, Spring v5.0.6.RELEASE 
+2018-08-23 20:25:25.341 INFO [riverway.ShoppingApplication.logStartupProfileInfo:659] - No active profile set, falling back to default profiles: default 
+2018-08-23 20:25:42.378 INFO [riverway.ShoppingApplication.logStarted:59] - Started ShoppingApplication in 17.95 seconds (JVM running for 19.531) 
+2018-08-23 20:25:51.010 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:25:51.062 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:25:56.248 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:25:56.336 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:25:56.359 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:26:00.960 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:26:00.980 DEBUG [riverway.web.ProductController.showDetail:35] - Here ! 
+2018-08-23 20:26:02.789 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:26:02.794 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:26:06.899 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:26:07.075 DEBUG [riverway.web.ApiCartController.addCart:27] - Option : Option{size=L, amount=2} 
+2018-08-23 20:26:07.091 DEBUG [riverway.web.ApiCartController.addCart:32] - CartProduct : CartProduct{product=Product{id=3, name='Vintage Inspired Classic', price=93, description='Watch', seller=User{id=1, username='river', password='$2a$10$v0n.ICi8CSDPrwUjZqSsSu0B18.epFOyeH12g3Ko7.gWmy.95nLAa', email='river@test.com', phoneNumber='01012345678', socialId=null, role=ROLE_ADMIN, socialCode=null}}, option=Option{size=L, amount=2}} 
+2018-08-23 20:26:07.091 DEBUG [riverway.web.ApiCartController.addCart:33] - CartList : Cart{cartProducts=[CartProduct{product=Product{id=3, name='Vintage Inspired Classic', price=93, description='Watch', seller=User{id=1, username='river', password='$2a$10$v0n.ICi8CSDPrwUjZqSsSu0B18.epFOyeH12g3Ko7.gWmy.95nLAa', email='river@test.com', phoneNumber='01012345678', socialId=null, role=ROLE_ADMIN, socialCode=null}}, option=Option{size=L, amount=2}}]} 
+2018-08-23 20:26:12.739 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:26:13.903 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
+2018-08-23 20:26:13.910 DEBUG [riverway.security.BasicAuthInterceptor.preHandle:27] - Authorization : null 
