@@ -107,6 +107,7 @@ public class Product {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", price=" + price +
+                ", category=" + category +
                 ", description='" + description + '\'' +
                 ", seller=" + seller +
                 '}';

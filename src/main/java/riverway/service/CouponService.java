@@ -6,6 +6,7 @@ import riverway.domain.Coupon;
 import riverway.domain.repository.CouponRepository;
 
 import javax.persistence.EntityNotFoundException;
+import java.util.List;
 
 @Service
 public class CouponService {
@@ -20,5 +21,9 @@ public class CouponService {
     public Coupon findById(Long id) {
         return couponRepository.findById(id)
                 .orElseThrow(EntityNotFoundException::new);
+    }
+
+    public List<Coupon> findAll() {
+        return couponRepository.findAll();
     }
 }
