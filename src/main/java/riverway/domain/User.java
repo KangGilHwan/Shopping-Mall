@@ -1,9 +1,11 @@
 package riverway.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import riverway.dto.UserDto;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity
 public class User {
@@ -34,6 +36,10 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private List<UserCoupon> coupons;
+
     public User() {
     }
 
@@ -49,11 +55,13 @@ public class User {
 
     public UserDto toUserDto() {
         return UserDto.build()
+                .setId(id)
                 .setUsername(username)
                 .setPassword(password)
                 .setPhoneNumber(phoneNumber)
                 .setEmail(email)
-                .setRole(role);
+                .setRole(role)
+                .setCoupons(coupons);
     }
 
     public boolean matchPassword(String password) {
@@ -74,6 +82,10 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public List<UserCoupon> getCoupons() {
+        return coupons;
     }
 
     public boolean isGuestUser() {

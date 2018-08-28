@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import riverway.domain.Coupon;
+import riverway.domain.UserCoupon;
 import riverway.service.CouponService;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/coupons")
@@ -30,5 +32,20 @@ public class ApiCouponController {
     @GetMapping("/{id}")
     public Coupon show(@PathVariable Long id){
         return couponService.findById(id);
+    }
+
+    @PostMapping("/{couponId}/users/{userId}")
+    public ResponseEntity<Void> issueCoupon(@PathVariable Long couponId, @PathVariable Long userId){
+        UserCoupon userCoupon = couponService.save(userId, couponId);
+        log.debug("유저에게 쿠폰 발급 : {}", userCoupon);
+        URI uri = URI.create(String.format("/api/coupons/%d/users/%d", couponId, userId));
+        return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/{couponId}/users")
+    public ResponseEntity<Void> issueCouponAllUsers(@PathVariable Long couponId){
+        List<UserCoupon> userCoupons = couponService.issueCouponAllUsers(couponId);
+        log.debug("모든 유저에게 쿠폰 발급 : {}", userCoupons);
+        return ResponseEntity.ok().build();
     }
 }

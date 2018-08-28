@@ -10,3 +10,7 @@ INSERT INTO attachment (id, original_name, path, saved_name, size, product_id) V
 INSERT INTO attachment (id, original_name, path, saved_name, size, product_id) VALUES(2, 'Jumper', 'C:\Users\Kang\shop\item', 'product-05.jpg', 2111, 2);
 INSERT INTO attachment (id, original_name, path, saved_name, size, product_id) VALUES(3, 'Watch', 'C:\Users\Kang\shop\item', 'product-06.jpg', 2111, 3);
 INSERT INTO attachment (id, original_name, path, saved_name, size, product_id) VALUES(4, 'Tee', 'C:\Users\Kang\shop\item', 'product-08.jpg', 2111, 4);
+
+INSERT INTO coupon (id, discount, name) VALUES(1, 2000, '9월 할인 쿠폰');
+INSERT INTO coupon (id, discount, name) VALUES(2, 5000, '새학기 쿠폰');
+INSERT INTO coupon (id, discount, name) VALUES(3, 6000, '특별 회원 쿠폰');

@@ -73,7 +73,7 @@
                                     <td class="column-3">{{discount}}</td>
                                     <td class="column-4">
                                         <div class="rs1-select2 rs2-select2 bor8 bg0 m-b-12 m-t-9">
-                                            <select class="js-select2" id="user-select" name="time">
+                                            <select class="js-select2" id="coupon-issue-select-{{id}}" name="time">
                                                 <option>대상을 선택해주세요.</option>
                                                 <option value="all">모든 사용자</option>
                                                 {{#users}}
@@ -84,7 +84,7 @@
                                         </div>
                                     </td>
                                     <td class="column-5">
-                                        <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" id="coupon-issue">
+                                        <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" id="coupon-issue" value="{{id}}">
                                             적용
                                         </button>
                                     </td>

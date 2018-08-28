@@ -36,7 +36,7 @@ public class UserService {
         return userRepository.save(signUpUser.toConsumer());
     }
 
-    public User findUser(Long id) {
+    public User findById(Long id) {
         return userRepository.findById(id).orElseThrow(EntityNotFoundException::new);
     }
 
@@ -52,5 +52,9 @@ public class UserService {
 
     public List<UserDto> findAll(){
         return userRepository.findAll().stream().map(u -> u.toUserDto()).collect(Collectors.toList());
+    }
+
+    public List<User> findAllUsers(){
+        return userRepository.findAll();
     }
 }
