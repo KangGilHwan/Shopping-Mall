@@ -26,6 +26,7 @@ public class User {
     @Column(length = 20)
     private String phoneNumber;
 
+    @Column(unique = true)
     private Long socialId;
 
     @Column
