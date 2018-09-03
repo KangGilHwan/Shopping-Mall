@@ -2,10 +2,16 @@ package riverway.domain.cart;
 
 import riverway.domain.Product;
 
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.util.Objects;
 
+@Embeddable
 public class Option {
 
+    @Enumerated(EnumType.STRING)
     private Size size;
     private int amount;
 
