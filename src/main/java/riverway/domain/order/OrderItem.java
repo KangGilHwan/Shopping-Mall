@@ -24,7 +24,7 @@ public class OrderItem {
     @Embedded
     private Option option;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "coupon_id")
     private Coupon coupon;
 
