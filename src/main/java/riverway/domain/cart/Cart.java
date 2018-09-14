@@ -64,6 +64,7 @@ public class Cart {
         for (CartProduct product: cartProducts){
             orderItem = product.toOrderItem(coupons.get(index));
             orderItems.add(orderItem);
+            index++;
         }
         return orderItems;
     }

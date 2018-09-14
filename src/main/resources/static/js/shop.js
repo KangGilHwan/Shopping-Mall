@@ -221,21 +221,34 @@ alert("error");
 
 function order(e){
 e.preventDefault();
-//table-shopping-cart
-var hey = document.getElementById('table-shopping-cart');
-console.log("table : " + hey);
-console.log("queryString : " + JSON.stringify(hey));
-//$.ajax({
-//type : 'post',
-//url : url,
-//contentType : "application/json",
-//data : JSON.stringify(data),
-//error : function (xhr, status){
-//alert("error");
-//},
-//success : function(data, status){
-//console.log("success : " + data);
+var size = $("#cartSize").val();
+console.log("size : " + size);
+
+var list = [];
+var data;
+for(var i=0; i <size; i++){
+var coupon = document.getElementById('coupon-select' + i);
+var couponValue = coupon[coupon.selectedIndex].value;
+console.log("coupon value : " + couponValue);
+data = {
+couponId : couponValue,
+cartId : i
+}
+list.push(data);
+}
+
+console.log("data : " + JSON.stringify(list));
+$.ajax({
+type : 'post',
+url : '/api/order',
+contentType : "application/json",
+data : JSON.stringify(list),
+error : function (xhr, status){
+alert("error");
+},
+success : function(data, status){
+console.log("success : " + data);
 //location.href = "/";
-//}
-//});
+}
+});
 };
