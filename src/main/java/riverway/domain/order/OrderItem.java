@@ -36,4 +36,8 @@ public class OrderItem {
         this.option = option;
         this.coupon = coupon;
     }
+
+    public void belongTo(Order order) {
+        this.order = order;
+    }
 }

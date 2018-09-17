@@ -72,7 +72,7 @@
                                 <td class="column-5">$ {{price}}
                                     <div class="rs1-select2 rs2-select2 bor8 bg0 m-b-12 m-t-9">
                                         <select class="js-select2" id="coupon-select{{@index}}" name="time">
-                                            <option>쿠폰을 선택해주세요.</option>
+                                            <option value= null>쿠폰을 선택해주세요.</option>
                                             {{#coupons}}
                                             {{#coupon}}
                                             <option value="{{id}}">{{name}}</option>
@@ -143,22 +143,23 @@
 									</span>
 
                                 <div class="rs1-select2 rs2-select2 bor8 bg0 m-b-12 m-t-9">
-                                    <select class="js-select2" name="time">
-                                        <option>Select a country...</option>
-                                        <option>USA</option>
-                                        <option>UK</option>
-                                    </select>
-                                    <div class="dropDownSelect2"></div>
+                                    <input class="stext-111 cl8 plh3 size-111 p-lr-15" id="recipient" type="text" name="recipient"
+                                           placeholder="수령인">
                                 </div>
 
                                 <div class="bor8 bg0 m-b-12">
-                                    <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="postcode"
-                                           placeholder="우편 번호">
+                                    <input class="stext-111 cl8 plh3 size-111 p-lr-15" id="address" type="text" name="address"
+                                           placeholder="배송지 주소">
                                 </div>
 
                                 <div class="bor8 bg0 m-b-22">
-                                    <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="state"
-                                           placeholder="배송지 주소">
+                                    <input class="stext-111 cl8 plh3 size-111 p-lr-15" id="phoneNumber" type="text" name="phoneNumber"
+                                           placeholder="핸드폰 번호">
+                                </div>
+
+                                <div class="bor8 bg0 m-b-22">
+                                    <textarea class="stext-111 cl8 plh3 size-111 p-lr-15" id="specialNote" name="specialNote"
+                                              placeholder="배송시 요구사항"></textarea>
                                 </div>
 
                                 <div class="flex-w">

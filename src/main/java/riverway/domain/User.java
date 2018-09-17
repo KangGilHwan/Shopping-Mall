@@ -1,6 +1,7 @@
 package riverway.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.Where;
 import riverway.dto.UserDto;
 
 import javax.persistence.*;
@@ -39,6 +40,7 @@ public class User {
 
     @JsonIgnore
     @OneToMany(mappedBy = "user")
+    @Where(clause = "used = false")
     private List<UserCoupon> coupons;
 
     public User() {

@@ -237,12 +237,24 @@ cartId : i
 list.push(data);
 }
 
-console.log("data : " + JSON.stringify(list));
+var shipping = {
+address : $("#address").val(),
+recipient : $("#recipient").val(),
+phoneNumber : $("#phoneNumber").val(),
+specialNote : $("#specialNote").val()
+}
+
+var data2 = {
+orderCoupons : list,
+shipping : shipping
+}
+
+console.log("data : " + JSON.stringify(data2));
 $.ajax({
 type : 'post',
-url : '/api/order',
+url : '/api/orders',
 contentType : "application/json",
-data : JSON.stringify(list),
+data : JSON.stringify(data2),
 error : function (xhr, status){
 alert("error");
 },

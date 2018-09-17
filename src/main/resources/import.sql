@@ -15,8 +15,8 @@ INSERT INTO coupon (id, discount, name) VALUES(1, 2000, '9월 할인 쿠폰');
 INSERT INTO coupon (id, discount, name) VALUES(2, 5000, '새학기 쿠폰');
 INSERT INTO coupon (id, discount, name) VALUES(3, 6000, '특별 회원 쿠폰');
 
-INSERT INTO user_coupon (id, coupon_id, user_id) VALUES(1, 1, 1);
-INSERT INTO user_coupon (id, coupon_id, user_id) VALUES(2, 2, 1);
-INSERT INTO user_coupon (id, coupon_id, user_id) VALUES(3, 3, 1);
-INSERT INTO user_coupon (id, coupon_id, user_id) VALUES(4, 2, 1);
-INSERT INTO user_coupon (id, coupon_id, user_id) VALUES(5, 2, 2);
+INSERT INTO user_coupon (id, coupon_id, user_id, used) VALUES(1, 1, 1, false);
+INSERT INTO user_coupon (id, coupon_id, user_id, used) VALUES(2, 2, 1, false);
+INSERT INTO user_coupon (id, coupon_id, user_id, used) VALUES(3, 3, 1, false);
+INSERT INTO user_coupon (id, coupon_id, user_id, used) VALUES(4, 2, 2, false);
+INSERT INTO user_coupon (id, coupon_id, user_id, used) VALUES(5, 2, 2, false);

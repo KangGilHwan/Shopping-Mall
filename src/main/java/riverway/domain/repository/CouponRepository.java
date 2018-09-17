@@ -6,5 +6,4 @@ import riverway.domain.Coupon;
 import java.util.List;
 
 public interface CouponRepository extends JpaRepository<Coupon, Long> {
-    List<Coupon> findByIdIn(List<Long> coupons);
 }

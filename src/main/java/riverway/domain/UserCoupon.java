@@ -17,12 +17,22 @@ public class UserCoupon {
     @JoinColumn(name = "coupon_id")
     private Coupon coupon;
 
+    private boolean used = false;
+
     public UserCoupon() {
     }
 
     public UserCoupon(User user, Coupon coupon) {
         this.user = user;
         this.coupon = coupon;
+    }
+
+    public void useCoupon(){
+        used = true;
+    }
+
+    public boolean isUsed() {
+        return used;
     }
 
     public Long getId() {

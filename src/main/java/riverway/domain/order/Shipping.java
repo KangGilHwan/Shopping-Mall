@@ -13,13 +13,14 @@ public class Shipping {
 
     @Size(min = 10)
     @Column(nullable = false)
-    private String adress;
+    private String address;
 
     @Size(min = 10)
     @Column(nullable = false)
     private String phoneNumber;
 
     @Lob
+    @Column
     private String specialNote;
 
     public Shipping() {
@@ -34,12 +35,12 @@ public class Shipping {
         return this;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public Shipping setAdress(String adress) {
-        this.adress = adress;
+    public Shipping setAddress(String address) {
+        this.address = address;
         return this;
     }
 

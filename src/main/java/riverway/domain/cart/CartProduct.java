@@ -39,6 +39,10 @@ public class CartProduct {
         return new OrderItem(product, option, coupon);
     }
 
+    public OrderItem toOrderItem(){
+        return new OrderItem(product, option, null);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

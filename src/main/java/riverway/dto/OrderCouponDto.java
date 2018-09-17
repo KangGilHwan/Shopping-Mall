@@ -1,12 +1,15 @@
 package riverway.dto;
 
+import riverway.domain.cart.Cart;
+import riverway.domain.order.OrderItem;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class OrderCouponDto {
 
     private Long couponId;
-    private Long cartId;
+    private int cartId;
 
     public OrderCouponDto() {
     }
@@ -15,7 +18,7 @@ public class OrderCouponDto {
         this.couponId = couponId;
     }
 
-    public void setCartId(Long cartId) {
+    public void setCartId(int cartId) {
         this.cartId = cartId;
     }
 
@@ -23,8 +26,12 @@ public class OrderCouponDto {
         return couponId;
     }
 
-    public Long getCartId() {
+    public int getCartId() {
         return cartId;
+    }
+
+    public boolean useCoupon(){
+        return couponId != null;
     }
 
     @Override
