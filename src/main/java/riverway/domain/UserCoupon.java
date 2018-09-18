@@ -28,6 +28,9 @@ public class UserCoupon {
     }
 
     public void useCoupon(){
+        if(isUsed()){
+            throw new IllegalArgumentException("이미 사용된 쿠폰입니다.");
+        }
         used = true;
     }
 

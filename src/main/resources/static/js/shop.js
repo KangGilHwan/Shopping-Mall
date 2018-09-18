@@ -260,7 +260,7 @@ alert("error");
 },
 success : function(data, status){
 console.log("success : " + data);
-//location.href = "/";
+location.href = "/";
 }
 });
 };
