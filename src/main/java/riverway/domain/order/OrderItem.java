@@ -28,6 +28,8 @@ public class OrderItem {
     @JoinColumn(name = "coupon_id")
     private Coupon coupon;
 
+    private int price;
+
     public OrderItem() {
     }
 
@@ -35,9 +37,19 @@ public class OrderItem {
         this.product = product;
         this.option = option;
         this.coupon = coupon;
+        this.price = caculatePrice();
     }
 
     public void belongTo(Order order) {
         this.order = order;
+        order.addOrderItems(this);
+    }
+
+    public int caculatePrice() {
+        return option.calculatePrice(product.getPrice());
+    }
+
+    public int getPrice() {
+        return price;
     }
 }

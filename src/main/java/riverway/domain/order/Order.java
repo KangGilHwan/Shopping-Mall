@@ -20,6 +20,9 @@ public class Order {
     @JoinColumn(name = "consumer_id", nullable = false)
     private User consumer;
 
+    @Enumerated(EnumType.STRING)
+    private OrderState orderState;
+
     @Embedded
     private Shipping shipping;
 
@@ -27,12 +30,37 @@ public class Order {
     @OneToMany(mappedBy = "order")
     private List<OrderItem> orderItems = new ArrayList<>();
 
+    private int totalPrice;
+
     public Order() {
     }
 
     public Order(User consumer, Shipping shipping) {
         this.consumer = consumer;
         this.shipping = shipping;
+        this.orderState = OrderState.PAYMET_WATTING;
+        this.totalPrice = calculateTotalPrice();
+    }
+
+    public void addOrderItems(OrderItem orderItem){
+        orderItems.add(orderItem);
+    }
+
+    public int calculateTotalPrice(){
+        return orderItems.stream()
+                .mapToInt(OrderItem::getPrice)
+                .sum();
+    }
+
+    public void cancel(){
+        verifyNotYetShipped();
+        this.orderState = OrderState.CANCEL;
+    }
+
+    public void verifyNotYetShipped(){
+        if (!orderState.isChangeable()){
+            throw new IllegalStateException("이미 배송 진행중입니다.");
+        }
     }
 
     public Long getId() {
