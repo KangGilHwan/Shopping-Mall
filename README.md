@@ -1,14 +1,14 @@
-##Shopping-mall
+## Shopping-mall
 ---
 **Shopping-mall** 기능을 제공하는 웹 서비스
-####개발 환경
+#### 개발 환경
 ----
 * Java 1.8
 * Spring Boot
 * Buil tool - Gradle
 * DataBase - H2
 
-####구현 내용
+#### 구현 내용
 ----
 * 관리자(ADMIN 권한)
   * 상품 등록 가능
@@ -24,7 +24,7 @@
   * 주문하기
 ----
 
-#####필요한 기능
+##### 필요한 기능
 * 카카오 페이 결제 연동
 * 결제 후 메일 발송
 * 결제 취소
