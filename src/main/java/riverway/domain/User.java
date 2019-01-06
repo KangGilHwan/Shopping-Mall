@@ -1,9 +1,12 @@
 package riverway.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.Where;
 import riverway.dto.UserDto;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity
 public class User {
@@ -24,6 +27,7 @@ public class User {
     @Column(length = 20)
     private String phoneNumber;
 
+    @Column(unique = true)
     private Long socialId;
 
     @Column
@@ -33,6 +37,11 @@ public class User {
     @Column(columnDefinition = "varchar(30) default 'ROLE_USER'")
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    @Where(clause = "used = false")
+    private List<UserCoupon> coupons;
 
     public User() {
     }
@@ -49,11 +58,13 @@ public class User {
 
     public UserDto toUserDto() {
         return UserDto.build()
+                .setId(id)
                 .setUsername(username)
                 .setPassword(password)
                 .setPhoneNumber(phoneNumber)
                 .setEmail(email)
-                .setRole(role);
+                .setRole(role)
+                .setCoupons(coupons);
     }
 
     public boolean matchPassword(String password) {
@@ -74,6 +85,10 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public List<UserCoupon> getCoupons() {
+        return coupons;
     }
 
     public boolean isGuestUser() {

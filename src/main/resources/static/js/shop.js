@@ -4,6 +4,7 @@ $(document).on("click", "#login-btn", login);
 $(document).on("click", "#logoutBtn", logout);
 $(document).on("click", "#cartBtn", addCart);
 $(document).on("click", "#delete-cart", deleteCart);
+$(document).on("click", "#orderBtn", order);
 
 function signUp(e){
 e.preventDefault();
@@ -214,6 +215,52 @@ document.getElementById('totalPrice').innerHTML="Total: $" + totalPriceValue;
 },
 error : function (xhr, status){
 alert("error");
+}
+});
+};
+
+function order(e){
+e.preventDefault();
+var size = $("#cartSize").val();
+console.log("size : " + size);
+
+var list = [];
+var data;
+for(var i=0; i <size; i++){
+var coupon = document.getElementById('coupon-select' + i);
+var couponValue = coupon[coupon.selectedIndex].value;
+console.log("coupon value : " + couponValue);
+data = {
+couponId : couponValue,
+cartId : i
+}
+list.push(data);
+}
+
+var shipping = {
+address : $("#address").val(),
+recipient : $("#recipient").val(),
+phoneNumber : $("#phoneNumber").val(),
+specialNote : $("#specialNote").val()
+}
+
+var data2 = {
+orderCoupons : list,
+shipping : shipping
+}
+
+console.log("data : " + JSON.stringify(data2));
+$.ajax({
+type : 'post',
+url : '/api/orders',
+contentType : "application/json",
+data : JSON.stringify(data2),
+error : function (xhr, status){
+alert("error");
+},
+success : function(data, status){
+console.log("success : " + data);
+location.href = "/";
 }
 });
 };

@@ -12,7 +12,9 @@ import riverway.domain.repository.UserRepository;
 import riverway.dto.UserDto;
 
 import javax.persistence.EntityNotFoundException;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class UserService {
@@ -34,7 +36,7 @@ public class UserService {
         return userRepository.save(signUpUser.toConsumer());
     }
 
-    public User findUser(Long id) {
+    public User findById(Long id) {
         return userRepository.findById(id).orElseThrow(EntityNotFoundException::new);
     }
 
@@ -46,5 +48,13 @@ public class UserService {
         return userRepository.findByUsername(username)
                 .filter(user -> bCryptPasswordEncoder.matches(password, user.getPassword()))
                 .orElseThrow(() -> new UnAuthenticationException("비밀번호가 올바르지 않습니다."));
+    }
+
+    public List<UserDto> findAll(){
+        return userRepository.findAll().stream().map(u -> u.toUserDto()).collect(Collectors.toList());
+    }
+
+    public List<User> findAllUsers(){
+        return userRepository.findAll();
     }
 }

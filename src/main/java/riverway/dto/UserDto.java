@@ -3,8 +3,10 @@ package riverway.dto;
 import riverway.domain.Role;
 import riverway.domain.SocialCode;
 import riverway.domain.User;
+import riverway.domain.UserCoupon;
 
 import javax.validation.constraints.Size;
+import java.util.List;
 import java.util.Objects;
 
 public class UserDto {
@@ -19,6 +21,7 @@ public class UserDto {
     private Long socialId;
     private SocialCode socialCode;
     private Role role;
+    private List<UserCoupon> coupons;
 
     public UserDto() {
     }
@@ -40,6 +43,15 @@ public class UserDto {
 
     public static UserDto build() {
         return new UserDto();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public UserDto setId(Long id) {
+        this.id = id;
+        return this;
     }
 
     public String getUsername() {
@@ -102,6 +114,15 @@ public class UserDto {
 
     public UserDto setRole(Role role) {
         this.role = role;
+        return this;
+    }
+
+    public List<UserCoupon> getCoupons() {
+        return coupons;
+    }
+
+    public UserDto setCoupons(List<UserCoupon> coupons) {
+        this.coupons = coupons;
         return this;
     }
 

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Management</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="/images/icons/favicon.png"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/fonts/linearicons-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/css/util.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <!--===============================================================================================-->
+</head>
+<body class="animsition">
+
+<!-- Header -->
+{{>partial/header}}
+
+<!-- Cart -->
+{{>partial/cart}}
+
+
+<!-- Title page -->
+<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('/images/bg-02.jpg');">
+    <h2 class="ltext-105 cl0 txt-center">
+        Management
+    </h2>
+</section>
+
+<section class="bg0 p-t-62 p-b-60">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-8 col-lg-9 p-b-80">
+                <div class="p-r-45 p-r-0-lg">
+                    <div class="p-t-32">
+                        <form id="coupon-form" action="/api/coupons" method="post">
+                            <h4 class="mtext-105 cl2 txt-center p-b-30">
+                                Register a coupon
+                            </h4>
+
+                            <div class="bor8 m-b-20 how-pos4-parent">
+                                <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" id="coupon-name" type="text"
+                                       name="name"
+                                       placeholder="Coupon name">
+                            </div>
+
+                            <div class="bor8 m-b-20 how-pos4-parent">
+                                <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" id="coupon-discount"
+                                       type="number" name="discount"
+                                       placeholder="How much is the discount?">
+                            </div>
+
+                            <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" id="coupon-register">
+                               쿠폰 등록
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3 p-b-80">
+                <div class="side-menu">
+                    <div class="bor17 of-hidden pos-relative">
+                        <input class="stext-103 cl2 plh4 size-116 p-l-28 p-r-55" type="text" name="search"
+                               placeholder="Search">
+
+                        <button class="flex-c-m size-122 ab-t-r fs-18 cl4 hov-cl1 trans-04">
+                            <i class="zmdi zmdi-search"></i>
+                        </button>
+                    </div>
+
+                    <div class="p-t-55">
+                        <h4 class="mtext-112 cl2 p-b-33">
+                            Categories
+                        </h4>
+
+                        <ul>
+                            <li class="bor18">
+                                <a href="/admin/coupons/form" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
+                                    쿠폰 등록
+                                </a>
+                            </li>
+
+                            <li class="bor18">
+                                <a href="/admin/coupons" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
+                                    쿠폰 발급
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+{{>partial/footer}}
+
+<!-- Back to top -->
+<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<i class="zmdi zmdi-chevron-up"></i>
+		</span>
+</div>
+
+<!--===============================================================================================-->
+{{>partial/script}}
+
+</body>
+</html>

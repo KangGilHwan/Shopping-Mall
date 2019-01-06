@@ -17,7 +17,7 @@ public class CartTest {
     @Before
     public void setUp(){
         Option option = new Option(Size.XL, 3);
-        Product product = new Product("모자", 2500, "cap", new User());
+        Product product = new Product("모자", 2500, "cap", Category.ACCESSORIES,  new User());
         cartProduct = new CartProduct(product, option);
     }
 
@@ -31,12 +31,12 @@ public class CartTest {
         Cart cart = new Cart();
 
         Option option = new Option(Size.XL, 5);
-        Product product = new Product("모자", 2500, "cap", new User());
+        Product product = new Product("모자", 2500, "cap", Category.ACCESSORIES, new User());
         CartProduct newItem = new CartProduct(product, option);
         cart.addCart(newItem);
 
         option = new Option(Size.L, 3);
-        product = new Product("바지", 6000, "pants", new User());
+        product = new Product("바지", 6000, "pants", Category.MEN, new User());
         newItem = new CartProduct(product, option);
         cart.addCart(newItem);
 
@@ -49,7 +49,7 @@ public class CartTest {
         cart.addCart(cartProduct);
 
         Option option = new Option(Size.XL, 5);
-        Product product = new Product("모자", 2500, "cap", new User());
+        Product product = new Product("모자", 2500, "cap", Category.ACCESSORIES, new User());
         CartProduct newItem = new CartProduct(product, option);
 
         cart.addCart(newItem);
@@ -63,7 +63,7 @@ public class CartTest {
         cart.addCart(cartProduct);
 
         Option option = new Option(Size.L, 5);
-        Product product = new Product("모자", 2500, "cap", new User());
+        Product product = new Product("모자", 2500, "cap", Category.ACCESSORIES, new User());
         CartProduct newItem = new CartProduct(product, option);
 
         cart.addCart(newItem);

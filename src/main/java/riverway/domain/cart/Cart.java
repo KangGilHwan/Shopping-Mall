@@ -2,6 +2,9 @@ package riverway.domain.cart;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import riverway.domain.Coupon;
+import riverway.domain.order.OrderItem;
+import riverway.dto.OrderCouponDto;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -52,6 +55,14 @@ public class Cart {
 
     public List<CartProduct> getCartProducts() {
         return Collections.unmodifiableList(cartProducts);
+    }
+
+    public OrderItem toOrderItem(Coupon coupon, int cartId) {
+        return cartProducts.get(cartId).toOrderItem(coupon);
+    }
+
+    public OrderItem toOrderItem(int cartId) {
+        return cartProducts.get(cartId).toOrderItem();
     }
 
     @Override

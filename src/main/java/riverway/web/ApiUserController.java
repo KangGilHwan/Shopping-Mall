@@ -34,8 +34,8 @@ public class ApiUserController {
 
     @GetMapping("/{id}")
     public UserDto show(@PathVariable Long id) {
-        log.debug("User : {}",userService.findUser(id));
-        return userService.findUser(id).toUserDto();
+        log.debug("User : {}",userService.findById(id));
+        return userService.findById(id).toUserDto();
     }
 
     @PostMapping("/login")
