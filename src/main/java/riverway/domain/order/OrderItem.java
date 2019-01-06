@@ -37,7 +37,7 @@ public class OrderItem {
         this.product = product;
         this.option = option;
         this.coupon = coupon;
-        this.price = caculatePrice();
+        this.price = calculatePrice();
     }
 
     public void belongTo(Order order) {
@@ -45,8 +45,15 @@ public class OrderItem {
         order.addOrderItems(this);
     }
 
-    public int caculatePrice() {
+    public int caculatePriceNoCoupon() {
         return option.calculatePrice(product.getPrice());
+    }
+
+    public int calculatePrice() {
+        if (coupon == null) {
+            return caculatePriceNoCoupon();
+        }
+        return coupon.discount(caculatePriceNoCoupon());
     }
 
     public int getPrice() {

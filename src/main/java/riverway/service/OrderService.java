@@ -9,7 +9,6 @@ import riverway.domain.UserCoupon;
 import riverway.domain.cart.Cart;
 import riverway.domain.order.Order;
 import riverway.domain.order.OrderItem;
-import riverway.domain.order.Shipping;
 import riverway.domain.repository.OrderItemRepository;
 import riverway.domain.repository.OrderRepository;
 import riverway.domain.repository.UserCouponRepository;
@@ -17,7 +16,6 @@ import riverway.dto.OrderCouponDto;
 import riverway.dto.OrderDto;
 
 import javax.persistence.EntityNotFoundException;
-import java.util.List;
 
 @Service
 public class OrderService {
@@ -48,6 +46,7 @@ public class OrderService {
             orderItem.belongTo(order);
             orderItemRepository.save(orderItem);
         }
+        order.saveTotalPrice();
         return order;
     }
 
@@ -57,7 +56,7 @@ public class OrderService {
         }
         Coupon coupon = couponService.findById(orderCoupon.getCouponId());
         UserCoupon userCoupon = findCouponOfUser(coupon, user);
-        userCoupon.useCoupon();
+        userCoupon.use();
         return cart.toOrderItem(coupon, orderCoupon.getCartId());
     }
 

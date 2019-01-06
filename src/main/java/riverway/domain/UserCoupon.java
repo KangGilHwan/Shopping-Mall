@@ -27,8 +27,8 @@ public class UserCoupon {
         this.coupon = coupon;
     }
 
-    public void useCoupon(){
-        if(isUsed()){
+    public void use(){
+        if(used){
             throw new IllegalArgumentException("이미 사용된 쿠폰입니다.");
         }
         used = true;

@@ -39,11 +39,14 @@ public class Order {
         this.consumer = consumer;
         this.shipping = shipping;
         this.orderState = OrderState.PAYMET_WATTING;
-        this.totalPrice = calculateTotalPrice();
     }
 
     public void addOrderItems(OrderItem orderItem){
         orderItems.add(orderItem);
+    }
+
+    public void saveTotalPrice(){
+        totalPrice = calculateTotalPrice();
     }
 
     public int calculateTotalPrice(){
