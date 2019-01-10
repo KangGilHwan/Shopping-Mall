@@ -13,10 +13,6 @@ public class OrderItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "order_id", nullable = false)
-    private Order order;
-
     @OneToOne
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
@@ -38,11 +34,6 @@ public class OrderItem {
         this.option = option;
         this.coupon = coupon;
         this.price = calculatePrice();
-    }
-
-    public void belongTo(Order order) {
-        this.order = order;
-        order.addOrderItems(this);
     }
 
     public int caculatePriceNoCoupon() {

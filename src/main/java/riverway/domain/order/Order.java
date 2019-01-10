@@ -27,7 +27,8 @@ public class Order {
     private Shipping shipping;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "order")
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ORDER_ID")
     private List<OrderItem> orderItems = new ArrayList<>();
 
     private int totalPrice;
@@ -35,21 +36,15 @@ public class Order {
     public Order() {
     }
 
-    public Order(User consumer, Shipping shipping) {
+    public Order(User consumer, Shipping shipping, List<OrderItem> orderItems) {
         this.consumer = consumer;
         this.shipping = shipping;
         this.orderState = OrderState.PAYMET_WATTING;
+        this.orderItems = orderItems;
+        this.totalPrice = calculateTotalPrice();
     }
 
-    public void addOrderItems(OrderItem orderItem){
-        orderItems.add(orderItem);
-    }
-
-    public void saveTotalPrice(){
-        totalPrice = calculateTotalPrice();
-    }
-
-    public int calculateTotalPrice(){
+    private int calculateTotalPrice(){
         return orderItems.stream()
                 .mapToInt(OrderItem::getPrice)
                 .sum();
@@ -60,7 +55,7 @@ public class Order {
         this.orderState = OrderState.CANCEL;
     }
 
-    public void verifyNotYetShipped(){
+    private void verifyNotYetShipped(){
         if (!orderState.isChangeable()){
             throw new IllegalStateException("이미 배송 진행중입니다.");
         }

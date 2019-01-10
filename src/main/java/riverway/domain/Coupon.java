@@ -31,9 +31,9 @@ public class Coupon {
 
     public int discount(int beforePrice) {
         int price = beforePrice - discount;
-        if (price < 5000 || beforePrice < 10000) {
-            throw new RuntimeException("쿠폰을 적용할 수 없습니다.");
-        }
+//        if (price < 3 || beforePrice < 10) {
+//            throw new RuntimeException("쿠폰을 적용할 수 없습니다.");
+//        }
         return price;
     }
 

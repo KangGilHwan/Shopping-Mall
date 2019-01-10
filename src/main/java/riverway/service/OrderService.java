@@ -16,6 +16,8 @@ import riverway.dto.OrderCouponDto;
 import riverway.dto.OrderDto;
 
 import javax.persistence.EntityNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class OrderService {
@@ -38,15 +40,13 @@ public class OrderService {
 
     @Transactional
     public Order order(OrderDto orderDto, Cart cart, User loginUser) {
-        Order order = save(orderDto.toOrder(loginUser));
         OrderItem orderItem;
-
+        List<OrderItem> orderItems = new ArrayList<>();
         for (OrderCouponDto orderCoupon : orderDto.getOrderCoupons()) {
             orderItem = cartToOrderItem(orderCoupon, cart, loginUser);
-            orderItem.belongTo(order);
-            orderItemRepository.save(orderItem);
+            orderItems.add(orderItem);
         }
-        order.saveTotalPrice();
+        Order order = save(orderDto.toOrder(loginUser, orderItems));
         return order;
     }
 

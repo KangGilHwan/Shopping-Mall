@@ -2,6 +2,7 @@ package riverway.dto;
 
 import riverway.domain.User;
 import riverway.domain.order.Order;
+import riverway.domain.order.OrderItem;
 import riverway.domain.order.Shipping;
 
 import java.util.List;
@@ -30,8 +31,8 @@ public class OrderDto {
         this.orderCoupons = orderCoupons;
     }
 
-    public Order toOrder(User loginUser){
-        return new Order(loginUser, shipping);
+    public Order toOrder(User loginUser, List<OrderItem> orderItems){
+        return new Order(loginUser, shipping, orderItems);
     }
 
     @Override
