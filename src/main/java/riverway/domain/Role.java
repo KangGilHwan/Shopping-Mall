@@ -14,7 +14,7 @@ public enum Role {
         this.roleName = roleName;
     }
 
-    public static boolean hasSeller(Role role){
-        return role.roleName.stream().anyMatch(r-> r.equals("SELLER"));
+    public static boolean hasSeller(Role role) {
+        return role.roleName.stream().anyMatch(r -> r.equals("SELLER"));
     }
 }

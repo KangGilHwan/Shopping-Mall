@@ -31,7 +31,7 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public String showDetail(@PathVariable Long id, Model model){
+    public String showDetail(@PathVariable Long id, Model model) {
         log.debug("Here !");
         model.addAttribute("product", productService.findItem(id).toProductDto());
         return "/product/detail";

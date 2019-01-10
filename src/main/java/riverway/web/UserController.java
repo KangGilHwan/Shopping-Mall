@@ -11,8 +11,6 @@ import riverway.domain.User;
 import riverway.security.LoginUser;
 import riverway.service.UserService;
 
-import javax.servlet.http.HttpSession;
-
 @Controller
 @RequestMapping("/users")
 public class UserController {

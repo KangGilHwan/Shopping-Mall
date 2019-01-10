@@ -1,7 +1,5 @@
 package riverway.dto;
 
-import java.util.Objects;
-
 public class KakaoDto {
 
     private String access_token;

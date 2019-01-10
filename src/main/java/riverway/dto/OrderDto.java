@@ -31,7 +31,7 @@ public class OrderDto {
         this.orderCoupons = orderCoupons;
     }
 
-    public Order toOrder(User loginUser, List<OrderItem> orderItems){
+    public Order toEntity(User loginUser, List<OrderItem> orderItems) {
         return new Order(loginUser, shipping, orderItems);
     }
 

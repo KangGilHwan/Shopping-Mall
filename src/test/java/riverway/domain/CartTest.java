@@ -15,19 +15,19 @@ public class CartTest {
     private CartProduct cartProduct;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         Option option = new Option(Size.XL, 3);
-        Product product = new Product("모자", 2500, "cap", Category.ACCESSORIES,  new User());
+        Product product = new Product("모자", 2500, "cap", Category.ACCESSORIES, new User());
         cartProduct = new CartProduct(product, option);
     }
 
     @Test
-    public void 장바구니_상품_1개_가격(){
+    public void 장바구니_상품_1개_가격() {
         assertThat(cartProduct.getPrice(), is(7500));
     }
 
     @Test
-    public void 장바구니_전체_가격(){
+    public void 장바구니_전체_가격() {
         Cart cart = new Cart();
 
         Option option = new Option(Size.XL, 5);
@@ -44,7 +44,7 @@ public class CartTest {
     }
 
     @Test
-    public void addCart_상품_사이즈_같을때(){
+    public void addCart_상품_사이즈_같을때() {
         Cart cart = new Cart();
         cart.addCart(cartProduct);
 
@@ -58,7 +58,7 @@ public class CartTest {
     }
 
     @Test
-    public void addCart_상품_사이즈_다를때(){
+    public void addCart_상품_사이즈_다를때() {
         Cart cart = new Cart();
         cart.addCart(cartProduct);
 
@@ -71,7 +71,7 @@ public class CartTest {
     }
 
     @Test
-    public void addAmount(){
+    public void addAmount() {
         Option product = new Option(Size.L, 2);
         Option sameProductOption = new Option(Size.L, 3);
         product.addAmount(sameProductOption);

@@ -25,7 +25,7 @@ public class ApiProductController {
     private ProductService productService;
 
     @PostMapping("")
-    public ResponseEntity<Void> create(@LoginUser User loginUser, ProductDto productDto, MultipartFile image) throws IOException{
+    public ResponseEntity<Void> create(@LoginUser User loginUser, ProductDto productDto, MultipartFile image) throws IOException {
         log.debug("New Product : {}", productDto);
         log.debug("Image : {}", image.getOriginalFilename());
 

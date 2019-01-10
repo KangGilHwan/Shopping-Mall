@@ -35,7 +35,7 @@ public class ApiCartController {
     }
 
     @GetMapping("")
-    public ResponseEntity<Cart> showCart(@PathVariable Long id, HttpSession session){
+    public ResponseEntity<Cart> showCart(@PathVariable Long id, HttpSession session) {
         Cart cart = HttpSessionUtils.getCartFromSession(session);
         log.debug("CartList : {}", cart);
         return ResponseEntity.ok().body(cart);

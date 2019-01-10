@@ -2,7 +2,6 @@ package riverway.domain.order;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import riverway.domain.User;
-import riverway.domain.cart.Cart;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -44,19 +43,19 @@ public class Order {
         this.totalPrice = calculateTotalPrice();
     }
 
-    private int calculateTotalPrice(){
+    private int calculateTotalPrice() {
         return orderItems.stream()
                 .mapToInt(OrderItem::getPrice)
                 .sum();
     }
 
-    public void cancel(){
+    public void cancel() {
         verifyNotYetShipped();
         this.orderState = OrderState.CANCEL;
     }
 
-    private void verifyNotYetShipped(){
-        if (!orderState.isChangeable()){
+    private void verifyNotYetShipped() {
+        if (orderState != OrderState.PAYMET_WATTING && orderState != OrderState.PREPARING) {
             throw new IllegalStateException("이미 배송 진행중입니다.");
         }
     }

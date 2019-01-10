@@ -8,11 +8,9 @@ import riverway.domain.User;
 import riverway.domain.UserCoupon;
 import riverway.domain.repository.CouponRepository;
 import riverway.domain.repository.UserCouponRepository;
-import riverway.domain.repository.UserRepository;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 @Service
@@ -41,7 +39,7 @@ public class CouponService {
     }
 
     @Transactional
-    public UserCoupon save(Long userId, Long couponId){
+    public UserCoupon save(Long userId, Long couponId) {
         User user = userService.findById(userId);
         Coupon coupon = findById(couponId);
         UserCoupon userCoupon = new UserCoupon(user, coupon);
@@ -54,10 +52,23 @@ public class CouponService {
         List<UserCoupon> userCoupons = new ArrayList<>();
 
         List<User> users = userService.findAllUsers();
-        for (User user : users){
+        for (User user : users) {
             UserCoupon userCoupon = new UserCoupon(user, coupon);
             userCoupons.add(userCoupon);
         }
         return userCouponRepository.saveAll(userCoupons);
+    }
+
+    public Coupon use(User user, Long couponId) {
+        Coupon coupon = findById(couponId);
+        UserCoupon userCoupon = findCouponOfUser(coupon, user);
+        userCoupon.use();
+        return coupon;
+    }
+
+    public UserCoupon findCouponOfUser(Coupon coupon, User user) {
+        return userCouponRepository
+                .findByCouponAndUser(coupon, user)
+                .orElseThrow(EntityNotFoundException::new);
     }
 }

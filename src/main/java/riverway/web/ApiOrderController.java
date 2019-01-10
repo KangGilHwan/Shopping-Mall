@@ -1,24 +1,19 @@
 package riverway.web;
 
-import org.apache.catalina.manager.util.SessionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import riverway.domain.User;
 import riverway.domain.cart.Cart;
 import riverway.domain.order.Order;
-import riverway.domain.order.Shipping;
-import riverway.dto.OrderCouponDto;
 import riverway.dto.OrderDto;
 import riverway.security.LoginUser;
 import riverway.service.OrderService;
 
 import javax.servlet.http.HttpSession;
 import java.net.URI;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/orders")
@@ -30,7 +25,7 @@ public class ApiOrderController {
     private OrderService orderService;
 
     @PostMapping("")
-    public ResponseEntity<Void> order(@RequestBody OrderDto orderDto, @LoginUser User loginUser, HttpSession session){
+    public ResponseEntity<Void> order(@RequestBody OrderDto orderDto, @LoginUser User loginUser, HttpSession session) {
         log.debug("order : {}", orderDto);
         Cart cart = HttpSessionUtils.getCartFromSession(session);
         Order order = orderService.order(orderDto, cart, loginUser);
@@ -41,7 +36,7 @@ public class ApiOrderController {
     }
 
     @GetMapping("/{id}")
-    public Order show(@PathVariable Long id){
+    public Order show(@PathVariable Long id) {
         return orderService.findById(id);
     }
 }

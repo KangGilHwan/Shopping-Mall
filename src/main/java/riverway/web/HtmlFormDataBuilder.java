@@ -37,7 +37,7 @@ public class HtmlFormDataBuilder {
         return this;
     }
 
-    public HtmlFormDataBuilder setHeader(String key, String value){
+    public HtmlFormDataBuilder setHeader(String key, String value) {
         headers.set(key, value);
         return this;
     }

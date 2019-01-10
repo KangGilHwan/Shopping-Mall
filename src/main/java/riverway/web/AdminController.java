@@ -17,12 +17,12 @@ public class AdminController {
     private UserService userService;
 
     @GetMapping("/admin/coupons/form")
-    public String couponForm(){
+    public String couponForm() {
         return "/admin/couponForm";
     }
 
     @GetMapping("/admin/coupons")
-    public String issueCoupon(Model model){
+    public String issueCoupon(Model model) {
         model.addAttribute("coupons", couponService.findAll());
         model.addAttribute("users", userService.findAll());
         return "/admin/coupons";

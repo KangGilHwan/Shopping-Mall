@@ -1,10 +1,8 @@
 package riverway.dto;
 
+import riverway.domain.Coupon;
 import riverway.domain.cart.Cart;
 import riverway.domain.order.OrderItem;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class OrderCouponDto {
 
@@ -30,8 +28,16 @@ public class OrderCouponDto {
         return cartId;
     }
 
-    public boolean useCoupon(){
-        return couponId != null;
+    public boolean isCouponEmpty() {
+        return couponId == null;
+    }
+
+    public OrderItem toOrderItem(Cart cart) {
+        return cart.toOrderItem(cartId);
+    }
+
+    public OrderItem toOrderItemWithCoupon(Cart cart, Coupon coupon) {
+        return cart.toOrderItem(cartId, coupon);
     }
 
     @Override

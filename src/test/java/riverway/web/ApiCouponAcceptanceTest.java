@@ -14,12 +14,12 @@ import support.test.AcceptanceTest;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
-public class ApiCouponAcceptanceTest extends AcceptanceTest{
+public class ApiCouponAcceptanceTest extends AcceptanceTest {
 
     private static final Logger log = LoggerFactory.getLogger(ApiCouponAcceptanceTest.class);
 
     @Test
-    public void create_coupon(){
+    public void create_coupon() {
         Coupon coupon = new Coupon("name", 3000);
 
         String location = createResource("/api/coupons", coupon, basicAuthTemplateSeller());
@@ -29,7 +29,7 @@ public class ApiCouponAcceptanceTest extends AcceptanceTest{
     }
 
     @Test
-    public void create_coupon_no_admin(){
+    public void create_coupon_no_admin() {
         Coupon coupon = new Coupon("name2", 4000);
 
         ResponseEntity<String> response = basicAuthTemplateConsumer().postForEntity("/api/coupons", coupon, String.class);
@@ -37,7 +37,7 @@ public class ApiCouponAcceptanceTest extends AcceptanceTest{
     }
 
     @Test
-    public void show_coupon_no_admin(){
+    public void show_coupon_no_admin() {
         Coupon coupon = new Coupon("name3", 3000);
 
         String location = createResource("/api/coupons", coupon, basicAuthTemplateSeller());
@@ -47,7 +47,7 @@ public class ApiCouponAcceptanceTest extends AcceptanceTest{
     }
 
     @Test
-    public void issue_coupon(){
+    public void issue_coupon() {
         Coupon coupon = new Coupon("name", 3000);
         String location = createResource("/api/coupons", coupon, basicAuthTemplateSeller());
 
@@ -60,7 +60,7 @@ public class ApiCouponAcceptanceTest extends AcceptanceTest{
     }
 
     @Test
-    public void issue_coupon_all_users(){
+    public void issue_coupon_all_users() {
         Coupon coupon = new Coupon("name", 3000);
         String location = createResource("/api/coupons", coupon, basicAuthTemplateSeller());
 

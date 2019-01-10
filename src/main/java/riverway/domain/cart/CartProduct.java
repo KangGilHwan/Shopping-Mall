@@ -2,11 +2,8 @@ package riverway.domain.cart;
 
 import riverway.domain.Coupon;
 import riverway.domain.Product;
-import riverway.domain.order.Order;
 import riverway.domain.order.OrderItem;
-import riverway.dto.ProductDto;
 
-import javax.persistence.*;
 import java.util.Objects;
 
 public class CartProduct {
@@ -14,16 +11,16 @@ public class CartProduct {
     private Product product;
     private Option option;
 
-    public CartProduct(Product product, Option option){
+    public CartProduct(Product product, Option option) {
         this.product = product;
         this.option = option;
     }
 
-    public void addAmount(CartProduct newItem){
+    public void addAmount(CartProduct newItem) {
         option.addAmount(newItem.option);
     }
 
-    public int getPrice(){
+    public int getPrice() {
         return option.calculatePrice(product.getPrice());
     }
 
@@ -35,11 +32,11 @@ public class CartProduct {
         return option;
     }
 
-    public OrderItem toOrderItem(Coupon coupon){
+    public OrderItem toOrderItem(Coupon coupon) {
         return new OrderItem(product, option, coupon);
     }
 
-    public OrderItem toOrderItem(){
+    public OrderItem toOrderItem() {
         return new OrderItem(product, option, null);
     }
 

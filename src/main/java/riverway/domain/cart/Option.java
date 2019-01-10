@@ -1,9 +1,6 @@
 package riverway.domain.cart;
 
-import riverway.domain.Product;
-
 import javax.persistence.Embeddable;
-import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import java.util.Objects;
@@ -23,11 +20,11 @@ public class Option {
         this.amount = amount;
     }
 
-    public void addAmount(Option newItem){
+    public void addAmount(Option newItem) {
         amount += newItem.amount;
     }
 
-    public int calculatePrice(int price){
+    public int calculatePrice(int price) {
         return price * amount;
     }
 

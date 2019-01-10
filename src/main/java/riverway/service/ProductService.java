@@ -16,9 +16,7 @@ import riverway.dto.ProductDto;
 
 import javax.persistence.EntityNotFoundException;
 import java.io.IOException;
-import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 @Service
@@ -36,7 +34,7 @@ public class ProductService {
     private String path;
 
     @Transactional
-    public Product register(User seller, ProductDto item, MultipartFile image) throws IOException{
+    public Product register(User seller, ProductDto item, MultipartFile image) throws IOException {
         Product product = itemRepository.save(item.setSeller(seller).toProduct());
         Attachment attachment = attachmentRepository.save(Attachment.of(path, product, image));
         image.transferTo(attachment.save());

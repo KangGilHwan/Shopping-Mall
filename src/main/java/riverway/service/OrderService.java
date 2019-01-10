@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import riverway.domain.Coupon;
 import riverway.domain.User;
-import riverway.domain.UserCoupon;
 import riverway.domain.cart.Cart;
 import riverway.domain.order.Order;
 import riverway.domain.order.OrderItem;
@@ -34,10 +33,6 @@ public class OrderService {
     @Autowired
     private OrderItemRepository orderItemRepository;
 
-    public Order save(Order order) {
-        return orderRepository.save(order);
-    }
-
     @Transactional
     public Order order(OrderDto orderDto, Cart cart, User loginUser) {
         OrderItem orderItem;
@@ -46,25 +41,19 @@ public class OrderService {
             orderItem = cartToOrderItem(orderCoupon, cart, loginUser);
             orderItems.add(orderItem);
         }
-        Order order = save(orderDto.toOrder(loginUser, orderItems));
-        return order;
+        Order order = orderDto.toEntity(loginUser, orderItems);
+        return orderRepository.save(order);
     }
 
     private OrderItem cartToOrderItem(OrderCouponDto orderCoupon, Cart cart, User user) {
-        if (!orderCoupon.useCoupon()) {
-            return cart.toOrderItem(orderCoupon.getCartId());
+        if (orderCoupon.isCouponEmpty()) {
+            return orderCoupon.toOrderItem(cart);
         }
-        Coupon coupon = couponService.findById(orderCoupon.getCouponId());
-        UserCoupon userCoupon = findCouponOfUser(coupon, user);
-        userCoupon.use();
-        return cart.toOrderItem(coupon, orderCoupon.getCartId());
+        Coupon coupon = couponService.use(user, orderCoupon.getCouponId());
+        return orderCoupon.toOrderItemWithCoupon(cart, coupon);
     }
 
     public Order findById(Long id) {
         return orderRepository.findById(id).orElseThrow(EntityNotFoundException::new);
-    }
-
-    public UserCoupon findCouponOfUser(Coupon coupon, User user){
-        return userCouponRepository.findByCouponAndUser(coupon, user).orElseThrow(EntityNotFoundException::new);
     }
 }

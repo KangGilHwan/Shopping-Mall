@@ -5,11 +5,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import riverway.exception.UnAuthenticationException;
 import riverway.domain.SocialCode;
 import riverway.domain.User;
 import riverway.domain.repository.UserRepository;
 import riverway.dto.UserDto;
+import riverway.exception.UnAuthenticationException;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
@@ -50,11 +50,11 @@ public class UserService {
                 .orElseThrow(() -> new UnAuthenticationException("비밀번호가 올바르지 않습니다."));
     }
 
-    public List<UserDto> findAll(){
+    public List<UserDto> findAll() {
         return userRepository.findAll().stream().map(u -> u.toUserDto()).collect(Collectors.toList());
     }
 
-    public List<User> findAllUsers(){
+    public List<User> findAllUsers() {
         return userRepository.findAll();
     }
 }

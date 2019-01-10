@@ -5,9 +5,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import riverway.exception.UnAuthenticationException;
 import riverway.domain.User;
 import riverway.dto.UserDto;
+import riverway.exception.UnAuthenticationException;
 import riverway.service.UserService;
 
 import javax.servlet.http.HttpSession;
@@ -34,7 +34,7 @@ public class ApiUserController {
 
     @GetMapping("/{id}")
     public UserDto show(@PathVariable Long id) {
-        log.debug("User : {}",userService.findById(id));
+        log.debug("User : {}", userService.findById(id));
         return userService.findById(id).toUserDto();
     }
 
@@ -46,7 +46,7 @@ public class ApiUserController {
     }
 
     @PostMapping("/logout")
-    public ResponseEntity<Void> logout(HttpSession session){
+    public ResponseEntity<Void> logout(HttpSession session) {
         session.removeAttribute(HttpSessionUtils.USER_SESSION_KEY);
         log.debug("Logout!");
         return ResponseEntity.ok().build();

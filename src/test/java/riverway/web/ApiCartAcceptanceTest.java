@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.*;
 import org.springframework.util.MultiValueMap;
-import org.springframework.web.bind.annotation.RequestBody;
 import riverway.domain.cart.Option;
 import riverway.domain.cart.Size;
 import support.test.AcceptanceTest;
@@ -16,12 +15,12 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class ApiCartAcceptanceTest extends AcceptanceTest{
+public class ApiCartAcceptanceTest extends AcceptanceTest {
 
     private static final Logger log = LoggerFactory.getLogger(ApiCartAcceptanceTest.class);
 
     @Test
-    public void addCart_no_login(){
+    public void addCart_no_login() {
         HttpEntity<MultiValueMap<String, Object>> request = HtmlFormDataBuilder.multipartFormData()
                 .addParameter("name", "Shoes")
                 .addParameter("price", 20000)
@@ -39,7 +38,7 @@ public class ApiCartAcceptanceTest extends AcceptanceTest{
     }
 
     @Test
-    public void addCart_login(){
+    public void addCart_login() {
         HttpEntity<MultiValueMap<String, Object>> request = HtmlFormDataBuilder.multipartFormData()
                 .addParameter("name", "Hat")
                 .addParameter("price", 5000)
@@ -58,7 +57,7 @@ public class ApiCartAcceptanceTest extends AcceptanceTest{
     }
 
     @Test
-    public void deleteCart(){
+    public void deleteCart() {
         HttpEntity<MultiValueMap<String, Object>> request = HtmlFormDataBuilder.multipartFormData()
                 .addParameter("name", "Ring")
                 .addParameter("price", 4000)
