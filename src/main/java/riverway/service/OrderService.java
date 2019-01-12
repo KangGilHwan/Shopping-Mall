@@ -8,9 +8,7 @@ import riverway.domain.User;
 import riverway.domain.cart.Cart;
 import riverway.domain.order.Order;
 import riverway.domain.order.OrderItem;
-import riverway.domain.repository.OrderItemRepository;
 import riverway.domain.repository.OrderRepository;
-import riverway.domain.repository.UserCouponRepository;
 import riverway.dto.OrderCouponDto;
 import riverway.dto.OrderDto;
 
@@ -26,12 +24,6 @@ public class OrderService {
 
     @Autowired
     private OrderRepository orderRepository;
-
-    @Autowired
-    private UserCouponRepository userCouponRepository;
-
-    @Autowired
-    private OrderItemRepository orderItemRepository;
 
     @Transactional
     public Order order(OrderDto orderDto, Cart cart, User loginUser) {
