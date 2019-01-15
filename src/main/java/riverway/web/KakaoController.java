@@ -7,16 +7,21 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 import riverway.domain.SocialCode;
 import riverway.domain.User;
 import riverway.dto.KakaoDto;
+import riverway.dto.KakaoPaymentDto;
 import riverway.dto.UserDto;
+import riverway.service.OrderService;
 import riverway.service.UserService;
 
 import javax.servlet.http.HttpSession;
@@ -28,6 +33,9 @@ import java.util.Optional;
 public class KakaoController {
 
     private static final Logger log = LoggerFactory.getLogger(KakaoController.class);
+
+    @Value("${kakao.admin.key}")
+    private String ADMIN_KEY;
 
     @Value("${kakao.client.id}")
     private String CLIENT_ID;
@@ -41,6 +49,9 @@ public class KakaoController {
     @Value("${kakao.user.info}")
     private String USER_INFO_URI;
 
+    @Value("${kakao.payment.ready}")
+    private String PAYMENT_READY_URI;
+
     @Autowired
     private RestTemplate restTemplate;
 
@@ -49,6 +60,9 @@ public class KakaoController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private OrderService orderService;
 
 
     @GetMapping("/oauth")
@@ -67,6 +81,30 @@ public class KakaoController {
         }
         session.setAttribute(HttpSessionUtils.USER_SESSION_KEY, maybeUser.get());
         return "redirect:/";
+    }
+
+    @GetMapping("/payment/{orderId}")
+    public String pay(@PathVariable Long orderId) {
+        int totalPrice = 50000;
+        log.debug("Admin kakao : {}", ADMIN_KEY);
+        log.debug("url kakao : {}", PAYMENT_READY_URI);
+        HttpEntity<MultiValueMap<String, Object>> request = HtmlFormDataBuilder.urlEncodeFormJSONKakao()
+                .setHeader("Authorization", "KakaoAK " + ADMIN_KEY)
+                .addParameter("cid", "TC0ONETIME")
+                .addParameter("partner_order_id", "tt")
+                .addParameter("partner_user_id", "riverway")
+                .addParameter("item_name", "옷장수")
+                .addParameter("quantity", "1")
+                .addParameter("total_amount", "50000")
+                .addParameter("tax_free_amount", "200")
+                .addParameter("approval_url", "http://localhost:8060/api/kakao/success")
+                .addParameter("fail_url", "http://localhost:8060/api/kakao/fail")
+                .addParameter("cancel_url", "http://localhost:8060/api/kakao/cancel")
+                .build();
+        log.debug("request to kakao : {}", request);
+        KakaoPaymentDto response = restTemplate.postForObject(PAYMENT_READY_URI, request, KakaoPaymentDto.class);
+        log.debug("response from kakao : {}", response);
+        return "redirect:" + response.getNext_redirect_pc_url();
     }
 
     private KakaoDto getAccessToken(String code) {

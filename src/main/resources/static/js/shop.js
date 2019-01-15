@@ -258,9 +258,10 @@ data : JSON.stringify(data2),
 error : function (xhr, status){
 alert("error");
 },
-success : function(data, status){
-console.log("success : " + data);
-location.href = "/";
+success : function(result, status, xhr){
+var url = xhr.getResponseHeader('Location')
+console.log("success : " + xhr.getResponseHeader('Location'));
+location.href = "/api/kakao/payment" + url.substring(url.lastIndexOf("/"));;
 }
 });
 };

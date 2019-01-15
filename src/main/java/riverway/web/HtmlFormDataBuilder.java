@@ -22,6 +22,11 @@ public class HtmlFormDataBuilder {
         return this;
     }
 
+    public HtmlFormDataBuilder addParameter(String key, int value) {
+        this.params.add(key, value + "");
+        return this;
+    }
+
     public HtmlFormDataBuilder addParameter(String key, Object value) {
         this.params.add(key, value);
         return this;
@@ -64,6 +69,13 @@ public class HtmlFormDataBuilder {
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.TEXT_HTML, MediaType.APPLICATION_JSON));
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+        return new HtmlFormDataBuilder(headers);
+    }
+
+    public static HtmlFormDataBuilder urlEncodeFormJSONKakao() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        headers.set("Content-Type" ,MediaType.APPLICATION_FORM_URLENCODED_VALUE);
         return new HtmlFormDataBuilder(headers);
     }
 }
