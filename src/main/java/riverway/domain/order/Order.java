@@ -2,10 +2,12 @@ package riverway.domain.order;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import riverway.domain.User;
+import riverway.dto.PaymentDto;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "order_table")
@@ -35,10 +37,10 @@ public class Order {
     public Order() {
     }
 
-    public Order(User consumer, Shipping shipping, List<OrderItem> orderItems) {
+    public Order(User consumer, Shipping shipping, List<OrderItem> orderItems, OrderState orderState) {
         this.consumer = consumer;
         this.shipping = shipping;
-        this.orderState = OrderState.PAYMET_WATTING;
+        this.orderState = orderState;
         this.orderItems = orderItems;
         this.totalPrice = calculateTotalPrice();
     }
@@ -60,6 +62,12 @@ public class Order {
         }
     }
 
+    public String joinItemNames() {
+        return orderItems.stream()
+                .map(OrderItem::getItemName)
+                .collect(Collectors.joining(", "));
+    }
+
     public Long getId() {
         return id;
     }
@@ -78,5 +86,12 @@ public class Order {
 
     public int getTotalPrice() {
         return totalPrice;
+    }
+
+    public PaymentDto toPaymentDto() {
+        if (orderState != OrderState.PAYMET_WATTING) {
+            throw new IllegalStateException("결제를 진행할 수 없습니다.");
+        }
+        return PaymentDto.of(id, consumer.getUsername(), joinItemNames(), orderItems.size(), totalPrice);
     }
 }
