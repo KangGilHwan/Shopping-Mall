@@ -7,21 +7,20 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 import riverway.domain.SocialCode;
 import riverway.domain.User;
 import riverway.dto.KakaoDto;
 import riverway.dto.KakaoPaymentDto;
+import riverway.dto.PaymentDto;
 import riverway.dto.UserDto;
-import riverway.service.OrderService;
+import riverway.service.PaymentService;
 import riverway.service.UserService;
 
 import javax.servlet.http.HttpSession;
@@ -62,7 +61,7 @@ public class KakaoController {
     private UserService userService;
 
     @Autowired
-    private OrderService orderService;
+    private PaymentService paymentService;
 
 
     @GetMapping("/oauth")
@@ -85,18 +84,18 @@ public class KakaoController {
 
     @GetMapping("/payment/{orderId}")
     public String pay(@PathVariable Long orderId) {
-        int totalPrice = 50000;
+        PaymentDto payment = paymentService.getPayment(orderId);
         log.debug("Admin kakao : {}", ADMIN_KEY);
         log.debug("url kakao : {}", PAYMENT_READY_URI);
         HttpEntity<MultiValueMap<String, Object>> request = HtmlFormDataBuilder.urlEncodeFormJSONKakao()
                 .setHeader("Authorization", "KakaoAK " + ADMIN_KEY)
                 .addParameter("cid", "TC0ONETIME")
-                .addParameter("partner_order_id", "tt")
-                .addParameter("partner_user_id", "riverway")
-                .addParameter("item_name", "옷장수")
-                .addParameter("quantity", "1")
-                .addParameter("total_amount", "50000")
-                .addParameter("tax_free_amount", "200")
+                .addParameter("partner_order_id", payment.getOrderId())
+                .addParameter("partner_user_id", payment.getUsername())
+                .addParameter("item_name", payment.getItemName())
+                .addParameter("quantity", payment.getQuantity())
+                .addParameter("total_amount", payment.getTotalPrice())
+                .addParameter("tax_free_amount", payment.getTotalPrice() / 10)
                 .addParameter("approval_url", "http://localhost:8060/api/kakao/success")
                 .addParameter("fail_url", "http://localhost:8060/api/kakao/fail")
                 .addParameter("cancel_url", "http://localhost:8060/api/kakao/cancel")
