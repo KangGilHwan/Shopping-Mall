@@ -32,3 +32,6 @@ item/
 
 ### log ###
 .log
+
+### Mail Config###
+application-mail.properties

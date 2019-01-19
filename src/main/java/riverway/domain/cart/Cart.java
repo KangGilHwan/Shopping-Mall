@@ -22,7 +22,6 @@ public class Cart {
     public void addCart(CartProduct newItem) {
         Optional<CartProduct> maybeItem = findSameItem(newItem);
         if (maybeItem.isPresent()) {
-            log.debug("제품과 사이즈가 같은 경우");
             CartProduct cartProduct = maybeItem.get();
             cartProduct.addAmount(newItem);
             return;
@@ -37,9 +36,7 @@ public class Cart {
     }
 
     public void delete(CartProduct target) {
-        log.debug("Before cart Size : {}", cartProducts.size());
         cartProducts.remove(target);
-        log.debug("After cart Size : {}", cartProducts.size());
     }
 
     public int getSize() {

@@ -80,10 +80,6 @@ public class Order {
         return shipping;
     }
 
-    public List<OrderItem> getOrderItems() {
-        return orderItems;
-    }
-
     public int getTotalPrice() {
         return totalPrice;
     }
