@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.util.MultiValueMap;
 import riverway.domain.Coupon;
 import riverway.dto.UserDto;
+import riverway.web.support.HtmlFormDataBuilder;
 import support.test.AcceptanceTest;
 
 import static org.hamcrest.Matchers.is;

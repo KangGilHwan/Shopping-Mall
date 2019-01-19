@@ -1,15 +1,16 @@
-package riverway.web;
+package riverway.web.api.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import riverway.domain.Product;
+import riverway.domain.product.Product;
 import riverway.domain.cart.Cart;
 import riverway.domain.cart.CartProduct;
 import riverway.domain.cart.Option;
 import riverway.service.ProductService;
+import riverway.web.support.HttpSessionUtils;
 
 import javax.servlet.http.HttpSession;
 

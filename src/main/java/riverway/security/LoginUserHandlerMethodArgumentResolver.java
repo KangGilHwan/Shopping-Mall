@@ -7,7 +7,7 @@ import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 import riverway.domain.User;
 import riverway.exception.UnAutorizedException;
-import riverway.web.HttpSessionUtils;
+import riverway.web.support.HttpSessionUtils;
 
 public class LoginUserHandlerMethodArgumentResolver implements HandlerMethodArgumentResolver {
 

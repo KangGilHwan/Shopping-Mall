@@ -1,4 +1,4 @@
-package riverway.web;
+package riverway.web.support;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;

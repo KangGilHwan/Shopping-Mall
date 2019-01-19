@@ -24,6 +24,8 @@ import riverway.dto.UserDto;
 import riverway.service.MailService;
 import riverway.service.PaymentService;
 import riverway.service.UserService;
+import riverway.web.support.HtmlFormDataBuilder;
+import riverway.web.support.HttpSessionUtils;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;

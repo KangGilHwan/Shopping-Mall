@@ -1,7 +1,7 @@
 package riverway.domain.cart;
 
 import riverway.domain.Coupon;
-import riverway.domain.Product;
+import riverway.domain.product.Product;
 import riverway.domain.order.OrderItem;
 
 import java.util.Objects;

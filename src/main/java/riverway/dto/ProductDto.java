@@ -1,8 +1,8 @@
 package riverway.dto;
 
-import riverway.domain.Attachment;
-import riverway.domain.Category;
-import riverway.domain.Product;
+import riverway.domain.product.Attachment;
+import riverway.domain.product.Category;
+import riverway.domain.product.Product;
 import riverway.domain.User;
 
 import javax.validation.constraints.Size;

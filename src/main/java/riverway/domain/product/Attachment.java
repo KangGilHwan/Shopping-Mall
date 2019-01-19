@@ -1,4 +1,4 @@
-package riverway.domain;
+package riverway.domain.product;
 
 import org.springframework.web.multipart.MultipartFile;
 

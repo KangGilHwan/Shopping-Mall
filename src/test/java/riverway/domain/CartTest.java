@@ -6,6 +6,8 @@ import riverway.domain.cart.Cart;
 import riverway.domain.cart.CartProduct;
 import riverway.domain.cart.Option;
 import riverway.domain.cart.Size;
+import riverway.domain.product.Category;
+import riverway.domain.product.Product;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;

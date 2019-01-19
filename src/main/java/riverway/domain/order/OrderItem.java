@@ -1,7 +1,7 @@
 package riverway.domain.order;
 
 import riverway.domain.Coupon;
-import riverway.domain.Product;
+import riverway.domain.product.Product;
 import riverway.domain.cart.Option;
 
 import javax.persistence.*;

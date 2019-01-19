@@ -1,4 +1,4 @@
-package riverway.web;
+package riverway.web.api.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,6 +11,7 @@ import riverway.domain.order.Order;
 import riverway.dto.OrderDto;
 import riverway.security.LoginUser;
 import riverway.service.OrderService;
+import riverway.web.support.HttpSessionUtils;
 
 import javax.servlet.http.HttpSession;
 import java.net.URI;

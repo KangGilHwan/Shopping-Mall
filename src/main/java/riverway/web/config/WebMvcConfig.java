@@ -1,4 +1,4 @@
-package riverway.web;
+package riverway.web.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

@@ -8,6 +8,7 @@ import org.springframework.http.*;
 import org.springframework.util.MultiValueMap;
 import riverway.domain.cart.Option;
 import riverway.domain.cart.Size;
+import riverway.web.support.HtmlFormDataBuilder;
 import support.test.AcceptanceTest;
 
 import static org.hamcrest.CoreMatchers.is;

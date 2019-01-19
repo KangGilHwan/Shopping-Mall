@@ -1,5 +1,6 @@
-package riverway.domain;
+package riverway.domain.product;
 
+import riverway.domain.User;
 import riverway.dto.ProductDto;
 
 import javax.persistence.*;

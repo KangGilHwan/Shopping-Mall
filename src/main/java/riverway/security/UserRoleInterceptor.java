@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import riverway.domain.User;
 import riverway.exception.UnAutorizedException;
-import riverway.web.HttpSessionUtils;
+import riverway.web.support.HttpSessionUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

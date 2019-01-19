@@ -8,7 +8,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import riverway.domain.User;
 import riverway.exception.UnAuthenticationException;
 import riverway.service.UserService;
-import riverway.web.HttpSessionUtils;
+import riverway.web.support.HttpSessionUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

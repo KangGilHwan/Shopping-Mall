@@ -1,4 +1,4 @@
-package riverway.web;
+package riverway.web.api.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,6 +9,7 @@ import riverway.domain.User;
 import riverway.dto.UserDto;
 import riverway.exception.UnAuthenticationException;
 import riverway.service.UserService;
+import riverway.web.support.HttpSessionUtils;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
