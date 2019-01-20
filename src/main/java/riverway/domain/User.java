@@ -2,6 +2,7 @@ package riverway.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Where;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import riverway.dto.UserDto;
 
 import javax.persistence.*;
@@ -34,7 +35,7 @@ public class User {
     @Enumerated(EnumType.STRING)
     private SocialCode socialCode;
 
-    @Column(columnDefinition = "varchar(30) default 'ROLE_USER'")
+    @Column(columnDefinition = "varchar(30) default 'USER'")
     @Enumerated(EnumType.STRING)
     private Role role;
 
@@ -67,8 +68,8 @@ public class User {
                 .setCoupons(coupons);
     }
 
-    public boolean matchPassword(String password) {
-        return this.password.equals(password);
+    public boolean matchPassword(String inputPassword, PasswordEncoder passwordEncoder) {
+        return passwordEncoder.matches(inputPassword, password);
     }
 
     public boolean isSeller() {

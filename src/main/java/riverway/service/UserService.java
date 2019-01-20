@@ -46,7 +46,7 @@ public class UserService {
 
     public User login(String username, String password) throws UnAuthenticationException {
         return userRepository.findByUsername(username)
-                .filter(user -> bCryptPasswordEncoder.matches(password, user.getPassword()))
+                .filter(user -> user.matchPassword(password, bCryptPasswordEncoder))
                 .orElseThrow(() -> new UnAuthenticationException("비밀번호가 올바르지 않습니다."));
     }
 

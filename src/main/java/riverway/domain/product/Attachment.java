@@ -32,7 +32,7 @@ public class Attachment {
     public Attachment() {
     }
 
-    public Attachment(String path, String originalName, String savedName, Long size, Product product) {
+    private Attachment(String path, String originalName, String savedName, Long size, Product product) {
         this.path = path;
         this.originalName = originalName;
         this.savedName = savedName.trim();

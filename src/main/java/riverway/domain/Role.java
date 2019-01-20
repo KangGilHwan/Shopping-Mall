@@ -5,8 +5,8 @@ import java.util.List;
 
 public enum Role {
 
-    ROLE_ADMIN(Arrays.asList("SELLER", "CONSUMER")),
-    ROLE_USER(Arrays.asList("CONSUMER"));
+    ADMIN(Arrays.asList("SELLER", "CONSUMER")),
+    USER(Arrays.asList("CONSUMER"));
 
     private List<String> roleName;
 

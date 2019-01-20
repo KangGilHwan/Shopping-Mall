@@ -1,10 +1,7 @@
 package riverway.dto;
 
 import riverway.domain.User;
-import riverway.domain.order.Order;
-import riverway.domain.order.OrderItem;
-import riverway.domain.order.OrderState;
-import riverway.domain.order.Shipping;
+import riverway.domain.order.*;
 
 import java.util.List;
 
@@ -32,7 +29,7 @@ public class OrderDto {
         this.orderCoupons = orderCoupons;
     }
 
-    public Order toEntity(User loginUser, List<OrderItem> orderItems) {
+    public Order toEntity(User loginUser, OrderItems orderItems) {
         return new Order(loginUser, shipping, orderItems, OrderState.PAYMET_WATTING);
     }
 

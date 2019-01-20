@@ -80,4 +80,6 @@ public class CartTest {
 
         assertThat(product.getAmount(), is(5));
     }
+
+
 }

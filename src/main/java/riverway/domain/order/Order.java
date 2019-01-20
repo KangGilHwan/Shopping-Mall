@@ -27,28 +27,20 @@ public class Order {
     @Embedded
     private Shipping shipping;
 
-    @JsonIgnore
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ORDER_ID")
-    private List<OrderItem> orderItems = new ArrayList<>();
+    @Embedded
+    private OrderItems orderItems;
 
     private int totalPrice;
 
     public Order() {
     }
 
-    public Order(User consumer, Shipping shipping, List<OrderItem> orderItems, OrderState orderState) {
+    public Order(User consumer, Shipping shipping, OrderItems orderItems, OrderState orderState) {
         this.consumer = consumer;
         this.shipping = shipping;
         this.orderState = orderState;
         this.orderItems = orderItems;
-        this.totalPrice = calculateTotalPrice();
-    }
-
-    private int calculateTotalPrice() {
-        return orderItems.stream()
-                .mapToInt(OrderItem::getPrice)
-                .sum();
+        this.totalPrice = orderItems.calculateTotalPrice();
     }
 
     public void cancel() {
@@ -62,10 +54,8 @@ public class Order {
         }
     }
 
-    public String joinItemNames() {
-        return orderItems.stream()
-                .map(OrderItem::getItemName)
-                .collect(Collectors.joining(", "));
+    private String joinItemNames() {
+        return orderItems.joinItemNames();
     }
 
     public Long getId() {
@@ -88,6 +78,6 @@ public class Order {
         if (orderState != OrderState.PAYMET_WATTING) {
             throw new IllegalStateException("결제를 진행할 수 없습니다.");
         }
-        return PaymentDto.of(id, consumer.getUsername(), joinItemNames(), orderItems.size(), totalPrice);
+        return PaymentDto.of(id, consumer.getUsername(), joinItemNames(), orderItems.getNumberOfItems(), totalPrice);
     }
 }

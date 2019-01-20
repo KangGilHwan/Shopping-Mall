@@ -10,6 +10,7 @@ import java.util.Objects;
 public class Coupon {
 
     //TODO 쿠폰 나누기 - %와 일정 금액 할인
+    private static final int MIN_AMOUNT = 5000;
 
     @Id
     @GeneratedValue
@@ -31,8 +32,8 @@ public class Coupon {
 
     public int discount(int beforePrice) {
         int price = beforePrice - discount;
-        if (price < 3 || beforePrice < 10) {
-            throw new RuntimeException("쿠폰을 적용할 수 없습니다.");
+        if (price < MIN_AMOUNT) {
+            throw new IllegalStateException("쿠폰을 적용할 수 없습니다.");
         }
         return price;
     }

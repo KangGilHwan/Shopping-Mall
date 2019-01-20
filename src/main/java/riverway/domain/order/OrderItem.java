@@ -36,15 +36,15 @@ public class OrderItem {
         this.price = calculatePrice();
     }
 
-    public int caculatePriceNoCoupon() {
+    public int calculatePriceNoCoupon() {
         return option.calculatePrice(product.getPrice());
     }
 
     public int calculatePrice() {
         if (coupon == null) {
-            return caculatePriceNoCoupon();
+            return calculatePriceNoCoupon();
         }
-        return coupon.discount(caculatePriceNoCoupon());
+        return coupon.discount(calculatePriceNoCoupon());
     }
 
     public int getPrice() {

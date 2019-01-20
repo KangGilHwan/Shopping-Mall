@@ -8,6 +8,7 @@ import riverway.domain.User;
 import riverway.domain.cart.Cart;
 import riverway.domain.order.Order;
 import riverway.domain.order.OrderItem;
+import riverway.domain.order.OrderItems;
 import riverway.domain.repository.OrderRepository;
 import riverway.dto.OrderCouponDto;
 import riverway.dto.OrderDto;
@@ -33,7 +34,7 @@ public class OrderService {
             orderItem = cartToOrderItem(orderCoupon, cart, loginUser);
             orderItems.add(orderItem);
         }
-        Order order = orderDto.toEntity(loginUser, orderItems);
+        Order order = orderDto.toEntity(loginUser, new OrderItems(orderItems));
         return orderRepository.save(order);
     }
 
