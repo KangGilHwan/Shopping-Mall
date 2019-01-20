@@ -37,9 +37,6 @@ public class KakaoController {
 
     private static final Logger log = LoggerFactory.getLogger(KakaoController.class);
 
-    @Value("${kakao.admin.key}")
-    private String ADMIN_KEY;
-
     @Value("${kakao.client.id}")
     private String CLIENT_ID;
 
@@ -52,9 +49,6 @@ public class KakaoController {
     @Value("${kakao.user.info}")
     private String USER_INFO_URI;
 
-    @Value("${kakao.payment.ready}")
-    private String PAYMENT_READY_URI;
-
     @Autowired
     private RestTemplate restTemplate;
 
@@ -63,12 +57,6 @@ public class KakaoController {
 
     @Autowired
     private UserService userService;
-
-    @Autowired
-    private PaymentService paymentService;
-
-    @Autowired
-    private MailService mailService;
 
     @GetMapping("/oauth")
     public String kakaoLogin(String code, Model model, HttpSession session) throws Exception {
@@ -86,49 +74,6 @@ public class KakaoController {
             maybeUser = Optional.of(userService.socialRegister(userDto));
         }
         session.setAttribute(HttpSessionUtils.USER_SESSION_KEY, maybeUser.get());
-        return "redirect:/";
-    }
-
-    @GetMapping("/payment/{orderId}")
-    public String pay(@PathVariable Long orderId, HttpSession session) {
-        PaymentDto payment = paymentService.getPayment(orderId);
-        log.debug("Admin kakao : {}", ADMIN_KEY);
-        log.debug("url kakao : {}", PAYMENT_READY_URI);
-        HttpEntity<MultiValueMap<String, Object>> request = HtmlFormDataBuilder.urlEncodeFormJSONKakao()
-                .setHeader("Authorization", "KakaoAK " + ADMIN_KEY)
-                .addParameter("cid", "TC0ONETIME")
-                .addParameter("partner_order_id", payment.getOrderId())
-                .addParameter("partner_user_id", payment.getUsername())
-                .addParameter("item_name", payment.getItemName())
-                .addParameter("quantity", payment.getQuantity())
-                .addParameter("total_amount", payment.getTotalPrice())
-                .addParameter("tax_free_amount", payment.getTotalPrice() / 10)
-                .addParameter("approval_url", String.format("http://localhost:8060/api/kakao/payment/%d/approve", payment.getOrderId()))
-                .addParameter("fail_url", "http://localhost:8060/api/kakao/fail")
-                .addParameter("cancel_url", "http://localhost:8060/api/kakao/cancel")
-                .build();
-        log.debug("request to kakao : {}", request);
-        KakaoPaymentDto response = restTemplate.postForObject(PAYMENT_READY_URI, request, KakaoPaymentDto.class);
-        session.setAttribute("tid", response.getTid());
-        log.debug("response from kakao : {}", response);
-        return "redirect:" + response.getNext_redirect_pc_url();
-    }
-
-    @GetMapping("/payment/{orderId}/approve")
-    public String approve(@PathVariable Long orderId, HttpSession session, String pg_token) {
-        log.debug("Success" + pg_token);
-        PaymentDto payment = paymentService.getPayment(orderId);
-        HttpEntity<MultiValueMap<String, Object>> request = HtmlFormDataBuilder.urlEncodeFormJSONKakao()
-                .setHeader("Authorization", "KakaoAK " + ADMIN_KEY)
-                .addParameter("cid", "TC0ONETIME")
-                .addParameter("tid", session.getAttribute("tid"))
-                .addParameter("partner_order_id", payment.getOrderId())
-                .addParameter("partner_user_id", payment.getUsername())
-                .addParameter("pg_token", pg_token)
-                .build();
-        ResponseEntity<String> response = restTemplate.postForEntity("https://kapi.kakao.com/v1/payment/approve", request, String.class);
-        mailService.send("rlfghksop@naver.com", "결제완료", payment.getItemName());
-        log.debug("Success : {}", response);
         return "redirect:/";
     }
 
