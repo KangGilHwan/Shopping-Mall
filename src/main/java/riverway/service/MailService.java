@@ -9,8 +9,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class MailService {
 
-    @Autowired
     private MailSender mailSender;
+
+    public MailService(MailSender mailSender) {
+        this.mailSender = mailSender;
+    }
 
     @Async
     public void send(String to, String subject, String text) {
@@ -18,7 +21,6 @@ public class MailService {
         message.setTo(to);
         message.setSubject(subject);
         message.setText(text);
-
         mailSender.send(message);
     }
 }
